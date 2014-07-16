@@ -1,10 +1,4 @@
-HTML5 Muffin chocchip steps
+My coding blog
 ============================
 
-Run bundle install
-
-	bundle install
-
-Run jekyll
-
-	jekyll
+Visit http://www.vatweb.fr for more infos about me :)
