@@ -13,7 +13,7 @@ I tried to apply it but it wasn't working for me...
 
 Found out that it's because this version is only compatible with AngularJS 1.1 but once you are on AngularJS 1.2 and above it doesn't work.
 
-You can find my version, compatible with AngularJS 1.2 (but not with prior versions which is... weird...) on this JSfiddle: [http://jsfiddle.net/71cmypoL/3/] [2]
+You can find my version, compatible with AngularJS 1.2 (but not with prior versions which is... weird...) on this JSfiddle: [http://jsfiddle.net/vatweb/g1Lem3Lw/] [2]
 
   [1]: http://dotnetpanda.blogspot.co.nz/2013/12/lets-do-check-all-and-uncheck-all.html
-  [2]: http://jsfiddle.net/71cmypoL/3/
+  [2]: http://jsfiddle.net/vatweb/g1Lem3Lw/
