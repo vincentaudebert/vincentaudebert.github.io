@@ -1,6 +1,6 @@
 ---
 layout: post_page
-title: Angular UI Bootstrap Tabset and subtabs activation
+title: Angular UI Bootstrap Tabset and subtabs
 ---
 
 Few problems solved in this post. After a long investigation I found quite not clear and not documented how to use Angular UI Bootstrap tabsets.
