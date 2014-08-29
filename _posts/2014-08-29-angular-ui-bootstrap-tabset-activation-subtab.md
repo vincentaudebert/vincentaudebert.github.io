@@ -24,7 +24,7 @@ How to activate parent tabs when clicking on a child tab?
 
 To manage this I use the function `includes()` ([Documentation] [4]) of `$state` and I use dot-separated names for my routes like "foo.bar". Thanks to this I can look for "foo" to activate the parent tab and "foo.bar" for the child tab.
 
-You will find a basic 3-level tab example on this JSFiddle: [http://jsfiddle.net/vatweb/g1Lem3Lw/] [2]
+**You will find a basic 3-level tab example on this JSFiddle: [http://jsfiddle.net/vatweb/g1Lem3Lw/] [2]**
 
 Here is another link I used to give me an idea about expression evaluation in `active`: [http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview] [3]
 
