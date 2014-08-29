@@ -9,12 +9,14 @@ After a long investigation I found quite not clear and not documented how to use
 I was basically trying to have a range of tabs/subtabs and just activating them using `active` attribute.
 
 
+
 ### First issue
 More precisely, this issue: [https://github.com/angular-ui/bootstrap/issues/611][1]
 
 According to this github issue, it's not possible to use any expression/function evaluation in `active` attribute. You have to use a boolean var.
 
 That's the reason why I created an array to manage each tabs.
+
 
 
 ### Second problem
