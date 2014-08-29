@@ -3,8 +3,11 @@ layout: post_page
 title: Angular UI Bootstrap Tabset and subtabs
 ---
 
-Few problems solved in this post. After a long investigation I found quite not clear and not documented how to use Angular UI Bootstrap tabsets.
+Few problems solved in this post. 
+
+After a long investigation I found quite not clear and not documented how to use Angular UI Bootstrap tabsets.
 I was basically trying to have a range of tabs/subtabs and just activating them using `active` attribute.
+
 
 ### First issue
 More precisely, this issue: [https://github.com/angular-ui/bootstrap/issues/611][1]
@@ -12,6 +15,7 @@ More precisely, this issue: [https://github.com/angular-ui/bootstrap/issues/611]
 According to this github issue, it's not possible to use any expression/function evaluation in `active` attribute. You have to use a boolean var.
 
 That's the reason why I created an array to manage each tabs.
+
 
 ### Second problem
 How to activate parent tabs when clicking on a child tab?
