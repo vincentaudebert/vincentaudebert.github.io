@@ -1,6 +1,10 @@
 ---
-layout: post_page
+layout: post
 title: AngularJS 1.2 - checkAll/uncheckAll
+date:       2014-08-21 15:31:19
+summary:    Create a check all/uncheck all system with AngularJS 1.2
+categories: angularjs checkall
+redirect_from: "/2014/08/21/angularjs-1-2-checkall-uncheckall.html"
 ---
 
 It has been a while I didn't post. Sorry, I got busy with my new job.

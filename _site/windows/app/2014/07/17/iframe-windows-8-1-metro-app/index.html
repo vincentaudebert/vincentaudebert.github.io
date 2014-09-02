@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VatWeb &lt;CODE&gt; Blog</title>
+    <title>Iframe & Windows 8.1 metro app &#8211; VatWeb &lt;CODE&gt; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My blog which gives answers to random coding problems.">
+    <meta name="description" content="Manage iframes in a Windows 8.1 metro app">
     <meta name="author" content="Vincent Audebert">
-    
-    <link rel="canonical" href="http://vincentaudebert.github.io/">
+    <meta name="keywords" content="windows, app">
+    <link rel="canonical" href="http://vincentaudebert.github.io/windows/app/2014/07/17/iframe-windows-8-1-metro-app/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/basscss.css" type="text/css">
@@ -45,52 +45,58 @@
 
     <div class="post p2 p-responsive wrap" role="main">
       <div class="measure">
-        <div class="home">
-
-  <div class="posts">
-    
-      <div class="post">
-        <a href="/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/" class="post-link">
-          <p class="post-meta">Aug 30, 2014</p>
-          <h3 class="h2 post-title">Angular UI Bootstrap Tabset and subtabs</h3>
-          <p class="post-summary">Tabset and subtabs activation with AngularJS</p>
-        </a>
-      </div>
-    
-      <div class="post">
-        <a href="/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/" class="post-link">
-          <p class="post-meta">Aug 22, 2014</p>
-          <h3 class="h2 post-title">AngularJS 1.2 - checkAll/uncheckAll</h3>
-          <p class="post-summary">Create a check all/uncheck all system with AngularJS 1.2</p>
-        </a>
-      </div>
-    
-      <div class="post">
-        <a href="/windows/app/2014/07/17/iframe-windows-8-1-metro-app/" class="post-link">
-          <p class="post-meta">Jul 17, 2014</p>
-          <h3 class="h2 post-title">Iframe & Windows 8.1 metro app</h3>
-          <p class="post-summary">Manage iframes in a Windows 8.1 metro app</p>
-        </a>
-      </div>
-    
-  </div>
-
-  <div class="pagination clearfix mb1 mt4">
-  <div class="left">
-    
-      <span class="pagination-item disabled">Newer</span>
-    
-  </div>
-  <div class="right">
-    
-      <span class="pagination-item disabled">Older</span>
-    
-  </div>
+        <div class="post-header mb2">
+  <h1 class="py2">Iframe & Windows 8.1 metro app</h1>
+  <span class="post-meta">Jul 17, 2014</span>
 </div>
 
+<article class="post-content">
+  <p>Let’s start this blog with the problem which gave me the idea of starting it.</p>
 
-  <!--<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>-->
-</div>
+<p>I’m a web developer currently working for a startup called <a href="http://www.showcaseworkshop.com">Showcase Workshop</a>. While I was programming for our Windows 8 app I faced a problem when I needed to integrate HTML page in an iframe.</p>
+
+<p>Basically, I had a HTML page coming for my local cache (<code>ms-appdata</code>) and I could not load it in an <code>iframe</code> using something like this:</p>
+
+<p><code>&lt;iframe src=”ms-appdata:///local/index.html”&gt;&lt;/iframe&gt;</code></p>
+
+<p>I was getting a blank iframe. Then I tried with a web context iframe:</p>
+
+<p><code>&lt;iframe src=”ms-appx-web:///local/index.html”&gt;&lt;/iframe&gt;</code></p>
+
+<p>Unfortunately, <code>ms-appx-web</code> can’t access to a local resource but only to resources in the app package. So I was getting a black iframe…</p>
+
+<p>After a bit of googling I found this page: <a href="http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx">http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx</a></p>
+
+<p>Finally, I made it work with:</p>
+
+<p><code>&lt;x-ms-webview src=”ms-appdata:///local/index.html”&gt;&lt;/x-ms-webview&gt;</code></p>
+
+<p>You can find <code>x-ms-webview</code> documentation here: <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx">http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx</a></p>
+
+<p>N.B.: You might want to add this tag directly with jQuery but then you will get the famous security exception:</p>
+
+<blockquote>
+  <p>0x800c001c — JavaScript runtime error:
+Unable to add dynamic content. A
+script attempted to inject dynamic
+content, or elements previously
+modified dynamically, that might be
+unsafe. For example, using the
+innerHTML property to add script or
+malformed HTML will generate this
+exception. Use the toStaticHTML method
+to filter dynamic content, or
+explicitly create elements and
+attributes with a method such as
+createElement. For more information,
+see
+<a href="http://go.microsoft.com/fwlink/?LinkID=247104">http://go.microsoft.com/fwlink/?LinkID=247104</a>.</p>
+</blockquote>
+
+<p>I recommend to put <code>x-ms-webview</code> in hard in your HTML code with <code>display:none;</code> and then dynamically set the right <code>src</code> and display it when needed.</p>
+
+
+</article>
 
       </div>
     </div>

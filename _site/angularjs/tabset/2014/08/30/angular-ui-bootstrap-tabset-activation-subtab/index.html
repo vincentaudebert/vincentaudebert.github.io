@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VatWeb &lt;CODE&gt; Blog</title>
+    <title>Angular UI Bootstrap Tabset and subtabs &#8211; VatWeb &lt;CODE&gt; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My blog which gives answers to random coding problems.">
+    <meta name="description" content="Tabset and subtabs activation with AngularJS">
     <meta name="author" content="Vincent Audebert">
-    
-    <link rel="canonical" href="http://vincentaudebert.github.io/">
+    <meta name="keywords" content="angularjs, tabset">
+    <link rel="canonical" href="http://vincentaudebert.github.io/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/basscss.css" type="text/css">
@@ -45,52 +45,35 @@
 
     <div class="post p2 p-responsive wrap" role="main">
       <div class="measure">
-        <div class="home">
-
-  <div class="posts">
-    
-      <div class="post">
-        <a href="/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/" class="post-link">
-          <p class="post-meta">Aug 30, 2014</p>
-          <h3 class="h2 post-title">Angular UI Bootstrap Tabset and subtabs</h3>
-          <p class="post-summary">Tabset and subtabs activation with AngularJS</p>
-        </a>
-      </div>
-    
-      <div class="post">
-        <a href="/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/" class="post-link">
-          <p class="post-meta">Aug 22, 2014</p>
-          <h3 class="h2 post-title">AngularJS 1.2 - checkAll/uncheckAll</h3>
-          <p class="post-summary">Create a check all/uncheck all system with AngularJS 1.2</p>
-        </a>
-      </div>
-    
-      <div class="post">
-        <a href="/windows/app/2014/07/17/iframe-windows-8-1-metro-app/" class="post-link">
-          <p class="post-meta">Jul 17, 2014</p>
-          <h3 class="h2 post-title">Iframe & Windows 8.1 metro app</h3>
-          <p class="post-summary">Manage iframes in a Windows 8.1 metro app</p>
-        </a>
-      </div>
-    
-  </div>
-
-  <div class="pagination clearfix mb1 mt4">
-  <div class="left">
-    
-      <span class="pagination-item disabled">Newer</span>
-    
-  </div>
-  <div class="right">
-    
-      <span class="pagination-item disabled">Older</span>
-    
-  </div>
+        <div class="post-header mb2">
+  <h1 class="py2">Angular UI Bootstrap Tabset and subtabs</h1>
+  <span class="post-meta">Aug 30, 2014</span>
 </div>
 
+<article class="post-content">
+  <p>Few problems solved in this post. </p>
 
-  <!--<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>-->
-</div>
+<p>After a long investigation I found quite not clear and not documented how to use <strong>Angular UI Bootstrap tabsets</strong>.
+I was basically trying to have a range of <strong>tabs/subtabs</strong> and just <strong>activating</strong> them using <code>active</code> attribute.</p>
+
+<h3 id="first-issue">First issue</h3>
+<p>More precisely, this issue: <a href="https://github.com/angular-ui/bootstrap/issues/611">https://github.com/angular-ui/bootstrap/issues/611</a></p>
+
+<p>According to this github issue, it’s not possible to use any expression/function evaluation in <code>active</code> attribute. You have to use a boolean var.</p>
+
+<p>That’s the reason why I created an array to manage each tabs.</p>
+
+<h3 id="second-problem">Second problem</h3>
+<p>How to activate parent tabs when clicking on a child tab?</p>
+
+<p>To manage this I use the function <code>includes()</code> (<a href="https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stateincludesstatename--params">Documentation</a>) of <code>$state</code> and I use dot-separated names for my routes like “foo.bar”. Thanks to this I can look for “foo” to activate the parent tab and “foo.bar” for the child tab.</p>
+
+<p><strong>You will find a basic 3-level tab example on this JSFiddle: <a href="http://jsfiddle.net/wy8j75r8/3/">http://jsfiddle.net/wy8j75r8/3/</a></strong></p>
+
+<p>Here is another link I used to give me an idea about expression evaluation in <code>active</code>: <a href="http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview">http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview</a></p>
+
+
+</article>
 
       </div>
     </div>

@@ -1,6 +1,10 @@
 ---
-layout: post_page
+layout:     post
 title: Iframe & Windows 8.1 metro app
+date:       2014-07-16 15:31:19
+summary:    Manage iframes in a Windows 8.1 metro app
+categories: windows app
+redirect_from: "/2014/07/16/iframe-windows-8-1-metro-app.html"
 ---
 
 Let’s start this blog with the problem which gave me the idea of starting it.

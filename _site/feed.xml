@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VatWeb &amp;lt;CODE&amp;gt; Blog</title>
+    <description>My blog which gives answers to random coding problems.</description>
+    <link>http://vincentaudebert.github.io/</link>
+    <atom:link href="http://vincentaudebert.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Angular UI Bootstrap Tabset and subtabs</title>
+        <description>&lt;p&gt;Few problems solved in this post. &lt;/p&gt;
+
+&lt;p&gt;After a long investigation I found quite not clear and not documented how to use &lt;strong&gt;Angular UI Bootstrap tabsets&lt;/strong&gt;.
+I was basically trying to have a range of &lt;strong&gt;tabs/subtabs&lt;/strong&gt; and just &lt;strong&gt;activating&lt;/strong&gt; them using &lt;code&gt;active&lt;/code&gt; attribute.&lt;/p&gt;
+
+&lt;h3 id=&quot;first-issue&quot;&gt;First issue&lt;/h3&gt;
+&lt;p&gt;More precisely, this issue: &lt;a href=&quot;https://github.com/angular-ui/bootstrap/issues/611&quot;&gt;https://github.com/angular-ui/bootstrap/issues/611&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;According to this github issue, it’s not possible to use any expression/function evaluation in &lt;code&gt;active&lt;/code&gt; attribute. You have to use a boolean var.&lt;/p&gt;
+
+&lt;p&gt;That’s the reason why I created an array to manage each tabs.&lt;/p&gt;
+
+&lt;h3 id=&quot;second-problem&quot;&gt;Second problem&lt;/h3&gt;
+&lt;p&gt;How to activate parent tabs when clicking on a child tab?&lt;/p&gt;
+
+&lt;p&gt;To manage this I use the function &lt;code&gt;includes()&lt;/code&gt; (&lt;a href=&quot;https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stateincludesstatename--params&quot;&gt;Documentation&lt;/a&gt;) of &lt;code&gt;$state&lt;/code&gt; and I use dot-separated names for my routes like “foo.bar”. Thanks to this I can look for “foo” to activate the parent tab and “foo.bar” for the child tab.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;You will find a basic 3-level tab example on this JSFiddle: &lt;a href=&quot;http://jsfiddle.net/wy8j75r8/3/&quot;&gt;http://jsfiddle.net/wy8j75r8/3/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is another link I used to give me an idea about expression evaluation in &lt;code&gt;active&lt;/code&gt;: &lt;a href=&quot;http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview&quot;&gt;http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 30 Aug 2014 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/</guid>
+      </item>
+    
+      <item>
+        <title>AngularJS 1.2 - checkAll/uncheckAll</title>
+        <description>&lt;p&gt;It has been a while I didn’t post. Sorry, I got busy with my new job.&lt;/p&gt;
+
+&lt;p&gt;Thanks to this new job, I had to learn AngularJS. I must say I’m really surprised and happy about it!&lt;/p&gt;
+
+&lt;p&gt;It’s for this same job that I had to do a checkAll/uncheckAll functionnality. I found this page: &lt;a href=&quot;http://dotnetpanda.blogspot.co.nz/2013/12/lets-do-check-all-and-uncheck-all.html&quot;&gt;http://dotnetpanda.blogspot.co.nz/2013/12/lets-do-check-all-and-uncheck-all.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I tried to apply it but it wasn’t working for me…&lt;/p&gt;
+
+&lt;p&gt;Found out that it’s because this version is only compatible with AngularJS 1.1 but once you are on AngularJS 1.2 and above it doesn’t work.&lt;/p&gt;
+
+&lt;p&gt;You can find my version, compatible with AngularJS 1.2 (but not with prior versions which is… weird…) on this JSfiddle: &lt;a href=&quot;http://jsfiddle.net/vatweb/g1Lem3Lw/&quot;&gt;http://jsfiddle.net/vatweb/g1Lem3Lw/&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 22 Aug 2014 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/</guid>
+      </item>
+    
+      <item>
+        <title>Iframe &amp; Windows 8.1 metro app</title>
+        <description>&lt;p&gt;Let’s start this blog with the problem which gave me the idea of starting it.&lt;/p&gt;
+
+&lt;p&gt;I’m a web developer currently working for a startup called &lt;a href=&quot;http://www.showcaseworkshop.com&quot;&gt;Showcase Workshop&lt;/a&gt;. While I was programming for our Windows 8 app I faced a problem when I needed to integrate HTML page in an iframe.&lt;/p&gt;
+
+&lt;p&gt;Basically, I had a HTML page coming for my local cache (&lt;code&gt;ms-appdata&lt;/code&gt;) and I could not load it in an &lt;code&gt;iframe&lt;/code&gt; using something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;iframe src=”ms-appdata:///local/index.html”&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I was getting a blank iframe. Then I tried with a web context iframe:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;iframe src=”ms-appx-web:///local/index.html”&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, &lt;code&gt;ms-appx-web&lt;/code&gt; can’t access to a local resource but only to resources in the app package. So I was getting a black iframe…&lt;/p&gt;
+
+&lt;p&gt;After a bit of googling I found this page: &lt;a href=&quot;http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx&quot;&gt;http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, I made it work with:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;x-ms-webview src=”ms-appdata:///local/index.html”&amp;gt;&amp;lt;/x-ms-webview&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find &lt;code&gt;x-ms-webview&lt;/code&gt; documentation here: &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx&quot;&gt;http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;N.B.: You might want to add this tag directly with jQuery but then you will get the famous security exception:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;0x800c001c — JavaScript runtime error:
+Unable to add dynamic content. A
+script attempted to inject dynamic
+content, or elements previously
+modified dynamically, that might be
+unsafe. For example, using the
+innerHTML property to add script or
+malformed HTML will generate this
+exception. Use the toStaticHTML method
+to filter dynamic content, or
+explicitly create elements and
+attributes with a method such as
+createElement. For more information,
+see
+&lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkID=247104&quot;&gt;http://go.microsoft.com/fwlink/?LinkID=247104&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I recommend to put &lt;code&gt;x-ms-webview&lt;/code&gt; in hard in your HTML code with &lt;code&gt;display:none;&lt;/code&gt; and then dynamically set the right &lt;code&gt;src&lt;/code&gt; and display it when needed.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 17 Jul 2014 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/windows/app/2014/07/17/iframe-windows-8-1-metro-app/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/windows/app/2014/07/17/iframe-windows-8-1-metro-app/</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>http://vincentaudebert.github.io/2014/08/29/angular-ui-bootstrap-tabset-activation-subtab.html</loc>
+        <loc>http://vincentaudebert.github.io/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/</loc>
     </url>
     
     <url>
-        <loc>http://vincentaudebert.github.io/2014/08/21/angularjs-1-2-checkall-uncheckall.html</loc>
+        <loc>http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/</loc>
     </url>
     
     <url>
-        <loc>http://vincentaudebert.github.io/2014/07/16/iframe-windows-8-1-metro-app.html</loc>
+        <loc>http://vincentaudebert.github.io/windows/app/2014/07/17/iframe-windows-8-1-metro-app/</loc>
     </url>
     
 
@@ -18,8 +18,24 @@
     
     
     <url>
+        <loc>http://vincentaudebert.github.io/contact/</loc>
+    </url>
+    
+    
+    
+    
+    
+    
+    
+    <url>
         <loc>http://vincentaudebert.github.io/</loc>
     </url>
+    
+    
+    
+    
+    
+    
     
     
     

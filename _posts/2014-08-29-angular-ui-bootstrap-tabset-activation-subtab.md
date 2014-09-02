@@ -1,6 +1,10 @@
 ---
-layout: post_page
+layout: post
 title: Angular UI Bootstrap Tabset and subtabs
+date:       2014-08-29 15:31:19
+summary:    Tabset and subtabs activation with AngularJS
+categories: angularjs tabset
+redirect_from: "/2014/08/29/angular-ui-bootstrap-tabset-activation-subtab.html"
 ---
 
 Few problems solved in this post. 

@@ -4,10 +4,8 @@ Your title: Vincent Audebert.
 Site: vincent@vatweb.fr / www.vatweb.fr                        
 Twitter: vatweb                     
 Location: Wellington, New Zealand
-
+Blog: http://vincentaudebert.github.io
 
 /* THANKS */
 
-HTML5 Muffin
-This is a Frappuccino Blog
-Name: http://vincentaudebert.github.io
+This is a Jekyll blog using Pixyll theme

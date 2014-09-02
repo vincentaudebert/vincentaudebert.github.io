@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="p2 wrap">
+  	<div class="measure mt1 center">
+  		<a href="https://twitter.com/vatweb" class="twitter-follow-button" data-show-count="false">Follow @vatweb</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <a href="http://nz.linkedin.com/in/vincentaudebert" style="text-decoration:none; margin-left:10px;">
+        	<span style="font: 60% Arial,sans-serif; color:#0783B6;">
+        		<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" style="width:20px; height:15px;" width="20" height="15" alt="Check my LinkedIn profile - Vincent Audebert" style="vertical-align:middle" border="0">Vincent Audebert
+        	</span>
+        </a>
+  	</div>
+    <div class="measure mt1 center">
+      <small>
+        Copyright © 2014 <a href="http://www.vatweb.fr">Vincent Audebert</a>.<br>
+        Powered by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/johnotander/pixyll.git">Pixyll</a> theme.
+      </small>
+    </div>
+  </div>
+</footer>
+
+{% if site.google_analytics %}
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '{{ site.google_analytics }}', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+{% endif %}
