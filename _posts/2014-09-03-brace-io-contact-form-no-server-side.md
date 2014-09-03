@@ -31,4 +31,4 @@ Of course feel free to add some bootstrap classes and/or angularJS form validati
   [2]: http://wufoo.com
   [3]: http://pixyll.com/
   [4]: http://forms.brace.io/
-  [5]: http://vincentaudebert.github.io/contact.html
+  [5]: http://vincentaudebert.github.io/contact/

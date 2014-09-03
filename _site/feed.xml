@@ -14,7 +14,7 @@
 
 &lt;p&gt;However, as you might have seen, I change my blog theme too to use &lt;a href=&quot;http://pixyll.com/&quot;&gt;Pixyll jekyll theme&lt;/a&gt;. While I was looking inside the source code, I ended up finding &lt;a href=&quot;http://forms.brace.io/&quot;&gt;Brace.io&lt;/a&gt; in the &lt;code&gt;action&lt;/code&gt; attribute of a form. Curious, I had a look and found out that Forms Brace.io allows you really easily to send a form content to your email address. Ideal for a contact form!&lt;/p&gt;
 
-&lt;p&gt;You can have a demo directly on this blog as it’s using it for &lt;a href=&quot;http://vincentaudebert.github.io/contact.html&quot;&gt;the contact form&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can have a demo directly on this blog as it’s using it for &lt;a href=&quot;http://vincentaudebert.github.io/contact/&quot;&gt;the contact form&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;And here come the really easy HTML piece of code to build a Brace form:&lt;/p&gt;
 
