@@ -7,6 +7,32 @@
     <atom:link href="http://vincentaudebert.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Contact form with no server side</title>
+        <description>&lt;p&gt;While I was redesigning my personal website &lt;a href=&quot;http://vatweb.fr&quot;&gt;vatweb.fr&lt;/a&gt;, I really didn’t want to have a server side involved just to send a basic contact form…&lt;/p&gt;
+
+&lt;p&gt;After a bit of Googling, I could not find anything better than &lt;a href=&quot;http://wufoo.com&quot;&gt;Wufoo&lt;/a&gt;… Not optimal but it would have done the job.&lt;/p&gt;
+
+&lt;p&gt;However, as you might have seen, I change my blog theme too to use &lt;a href=&quot;http://pixyll.com/&quot;&gt;Pixyll jekyll theme&lt;/a&gt;. While I was looking inside the source code, I ended up finding &lt;a href=&quot;http://forms.brace.io/&quot;&gt;Brace.io&lt;/a&gt; in the &lt;code&gt;action&lt;/code&gt; attribute of a form. Curious, I had a look and found out that Forms Brace.io allows you really easily to send a form content to your email address. Ideal for a contact form!&lt;/p&gt;
+
+&lt;p&gt;You can have a demo directly on this blog as it’s using it for &lt;a href=&quot;http://vincentaudebert.github.io/contact.html&quot;&gt;the contact form&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And here come the really easy HTML piece of code to build a Brace form:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://forms.brace.io/you@youremail.com&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;form-stacked form-light&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;email&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Email Address&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;textarea&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rows=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;5&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;What would you like to say?&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/textarea&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Say Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Of course feel free to add some bootstrap classes and/or angularJS form validation :)&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 30 Aug 2014 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/html/form/2014/08/30/brace-io-contact-form-no-server-side/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/html/form/2014/08/30/brace-io-contact-form-no-server-side/</guid>
+      </item>
+    
+      <item>
         <title>Angular UI Bootstrap Tabset and subtabs</title>
         <description>&lt;p&gt;Few problems solved in this post. &lt;/p&gt;
 

@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://vincentaudebert.github.io/html/form/2014/08/30/brace-io-contact-form-no-server-side/</loc>
+    </url>
+    
+    <url>
         <loc>http://vincentaudebert.github.io/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/</loc>
     </url>
     
@@ -30,6 +34,8 @@
     <url>
         <loc>http://vincentaudebert.github.io/</loc>
     </url>
+    
+    
     
     
     

@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VatWeb &lt;CODE&gt; Blog</title>
+    <title>Contact form with no server side &#8211; VatWeb &lt;CODE&gt; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My blog which gives answers to random coding problems.">
+    <meta name="description" content="Build a contact form with no server side, only HTML (and Javascript if you want)">
     <meta name="author" content="Vincent Audebert">
-    
-    <link rel="canonical" href="http://vincentaudebert.github.io/">
+    <meta name="keywords" content="html, form">
+    <link rel="canonical" href="http://vincentaudebert.github.io/html/form/2014/08/30/brace-io-contact-form-no-server-side/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/basscss.css" type="text/css">
@@ -45,60 +45,32 @@
 
     <div class="post p2 p-responsive wrap" role="main">
       <div class="measure">
-        <div class="home">
-
-  <div class="posts">
-    
-      <div class="post">
-        <a href="/html/form/2014/08/30/brace-io-contact-form-no-server-side/" class="post-link">
-          <p class="post-meta">Aug 30, 2014</p>
-          <h3 class="h2 post-title">Contact form with no server side</h3>
-          <p class="post-summary">Build a contact form with no server side, only HTML (and Javascript if you want)</p>
-        </a>
-      </div>
-    
-      <div class="post">
-        <a href="/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/" class="post-link">
-          <p class="post-meta">Aug 30, 2014</p>
-          <h3 class="h2 post-title">Angular UI Bootstrap Tabset and subtabs</h3>
-          <p class="post-summary">Tabset and subtabs activation with AngularJS</p>
-        </a>
-      </div>
-    
-      <div class="post">
-        <a href="/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/" class="post-link">
-          <p class="post-meta">Aug 22, 2014</p>
-          <h3 class="h2 post-title">AngularJS 1.2 - checkAll/uncheckAll</h3>
-          <p class="post-summary">Create a check all/uncheck all system with AngularJS 1.2</p>
-        </a>
-      </div>
-    
-      <div class="post">
-        <a href="/windows/app/2014/07/17/iframe-windows-8-1-metro-app/" class="post-link">
-          <p class="post-meta">Jul 17, 2014</p>
-          <h3 class="h2 post-title">Iframe & Windows 8.1 metro app</h3>
-          <p class="post-summary">Manage iframes in a Windows 8.1 metro app</p>
-        </a>
-      </div>
-    
-  </div>
-
-  <div class="pagination clearfix mb1 mt4">
-  <div class="left">
-    
-      <span class="pagination-item disabled">Newer</span>
-    
-  </div>
-  <div class="right">
-    
-      <span class="pagination-item disabled">Older</span>
-    
-  </div>
+        <div class="post-header mb2">
+  <h1 class="py2">Contact form with no server side</h1>
+  <span class="post-meta">Aug 30, 2014</span>
 </div>
 
+<article class="post-content">
+  <p>While I was redesigning my personal website <a href="http://vatweb.fr">vatweb.fr</a>, I really didn’t want to have a server side involved just to send a basic contact form…</p>
 
-  <!--<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>-->
-</div>
+<p>After a bit of Googling, I could not find anything better than <a href="http://wufoo.com">Wufoo</a>… Not optimal but it would have done the job.</p>
+
+<p>However, as you might have seen, I change my blog theme too to use <a href="http://pixyll.com/">Pixyll jekyll theme</a>. While I was looking inside the source code, I ended up finding <a href="http://forms.brace.io/">Brace.io</a> in the <code>action</code> attribute of a form. Curious, I had a look and found out that Forms Brace.io allows you really easily to send a form content to your email address. Ideal for a contact form!</p>
+
+<p>You can have a demo directly on this blog as it’s using it for <a href="http://vincentaudebert.github.io/contact.html">the contact form</a></p>
+
+<p>And here come the really easy HTML piece of code to build a Brace form:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;https://forms.brace.io/you@youremail.com&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">class=</span><span class="s">&quot;form-stacked form-light&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email Address&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;textarea</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span> <span class="na">rows=</span><span class="s">&quot;5&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;What would you like to say?&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Say Hello&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<p>Of course feel free to add some bootstrap classes and/or angularJS form validation :)</p>
+
+
+</article>
 
       </div>
     </div>
