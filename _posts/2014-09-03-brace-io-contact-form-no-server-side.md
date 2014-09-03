@@ -18,7 +18,7 @@ You can have a demo directly on this blog as it's using it for [the contact form
 And here come the really easy HTML piece of code to build a Brace form:
 
 {% highlight html %}
-<form action="https://forms.brace.io/you@youremail.com" method="POST" class="form-stacked form-light">
+<form action="https://forms.brace.io/you@youremail.com" method="POST">
 <input type="text" name="email" placeholder="Email Address">
 <textarea type="text" name="content" rows="5" placeholder="What would you like to say?"></textarea>
 <input type="submit" value="Say Hello">
