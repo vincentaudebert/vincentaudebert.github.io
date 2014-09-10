@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Contact form with no server side
-date:       2014-08-29 15:31:19
+date:       2014-09-03 15:31:19
 summary:    Build a contact form with no server side, only HTML (and Javascript if you want)
 categories: html form
-redirect_from: "/2014/08/29/angular-ui-bootstrap-tabset-activation-subtab.html"
 ---
 
 While I was redesigning my personal website [vatweb.fr] [1], I really didn't want to have a server side involved just to send a basic contact form...
