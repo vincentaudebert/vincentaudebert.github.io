@@ -6,7 +6,7 @@ summary:    Reminder how to test properly a string var in Javascript
 categories: javascript string
 ---
 
-Sometimes it's good to remind the basis.
+Sometimes it's good to remind the basics.
 
 Today, I was trying to test if a `Date` object that I made becoming a string using `toISOString()` was a string.
 
