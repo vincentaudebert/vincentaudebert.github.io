@@ -8,9 +8,9 @@ categories: frameworks node angular nosql
 
 Busy busy busy!
 
-For the last few weeks, I've been really busy between my job and a personnal project.
+For the last few weeks, I've been really busy between my job and a personal project.
 
-This personnal project was really interesting as I discovered a awesome new project starter called **MEAN.io**
+This personal project was really interesting as I discovered a awesome new project starter called **MEAN.io**
 
 MEAN stands for MongoDB Express.js AngularJS Node.js
 
@@ -36,6 +36,8 @@ Note that you can also run `node server` instead of `grunt`.
 After this have a look to the [documentation] [2] and explore the folder called "articles" inside your "packages" one. It will give you an idea of a basic CRUD system. And then yes... it's as easy as this!
 
 I would say that the most complicated thing I faced on my small project was probably to use/get foreign keys with mongoose but that really well documented [here] [3].
+
+Other good thing, maybe not for everybody, is that you will write only Javascript as all these technologies are using Javascript. You won't put anymore `;` in your python code when you just switch from Javascript front end! YAY!
 
 ### Bonus point
 Big bonus point for mean is that you can easily deploy your app on [Heroku] [4]
