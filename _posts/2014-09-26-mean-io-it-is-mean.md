@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MEAN.io... yes it s mean!
+title: MEAN.io... deserves its name!
 date:       2014-09-26 15:31:19
 summary:    Incredible project starter using mongodb, express.js, angularjs and node.js
 categories: frameworks node angular nosql
