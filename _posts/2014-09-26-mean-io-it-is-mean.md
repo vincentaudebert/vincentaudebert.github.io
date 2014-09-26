@@ -48,6 +48,9 @@ Behind its complicated terms, Heroku is a powerful web host and you will be able
 
 **Yes, everything is as easy as this!** and that's the magic about the combo Mean+Heroku!
 
+###Bonus point #2
+I will post a new article soon about using heroku for your devs/small projects but I was using a monitoring system on my app and noticed that before switching to MEAN, I was using a standard RoR app and my loading time was between 150/200ms. With MEAN it's only between 80/150ms.
+
   [1]: http://mean.io
   [2]: http://mean.io/#!/docs
   [3]: http://mongoosejs.com/docs/populate.html
