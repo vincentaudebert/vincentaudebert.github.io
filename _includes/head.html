@@ -10,17 +10,22 @@
     {% if page.categories %}<meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}"/>
+    <meta itemprop="description" content="You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new"/>
+    <meta itemprop="image" content="{{ "/ico/apple-touch-icon-144-precomposed.png" | prepend: site.baseurl }}"/> 
+
     <meta property="og:title" content="{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}"/>
     <meta property="og:type" content="blog"/>
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
     <meta property="og:image" content="{{ "/ico/apple-touch-icon-144-precomposed.png" | prepend: site.baseurl }}"/>
-    <meta property="og:description" content="We can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new"/>
+    <meta property="og:description" content="You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new"/>
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}">
     <meta name="twitter:description" content="You can retweet Justin Bieber... or you can check out VatWeb coding blog and learn something new">
     <meta name="twitter:image" content="{{ "/ico/apple-touch-icon-144-precomposed.png" | prepend: site.baseurl }}">
+    <meta name="twitter:creator" content="@vatweb">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/basscss.css" | prepend: site.baseurl }}" type="text/css">
