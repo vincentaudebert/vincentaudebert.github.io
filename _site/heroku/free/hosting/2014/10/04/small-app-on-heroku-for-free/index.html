@@ -4,27 +4,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-language" content="en" />
-    <title>AngularJS 1.2 - checkAll/uncheckAll &#8211; VatWeb &lt;CODE&gt; Blog</title>
+    <title>Small app on Heroku for free &#8211; VatWeb &lt;CODE&gt; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Create a check all/uncheck all system with AngularJS 1.2">
+    <meta name="description" content="Get your app set up on Heroku using only free services">
     <meta name="author" content="Vincent Audebert">
     <meta name="copyright" content="&copy; 2014 Vincent Audebert" />
-    <meta name="keywords" content="angularjs, checkall">
-    <link rel="canonical" href="http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/">
+    <meta name="keywords" content="heroku, free, hosting">
+    <link rel="canonical" href="http://vincentaudebert.github.io/heroku/free/hosting/2014/10/04/small-app-on-heroku-for-free/">
 
-    <meta itemprop="name" content="AngularJS 1.2 - checkAll/uncheckAll &#8211; VatWeb &lt;CODE&gt; Blog"/>
+    <meta itemprop="name" content="Small app on Heroku for free &#8211; VatWeb &lt;CODE&gt; Blog"/>
     <meta itemprop="description" content="You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new"/>
     <meta itemprop="image" content="/ico/apple-touch-icon-144-precomposed.png"/> 
 
-    <meta property="og:title" content="AngularJS 1.2 - checkAll/uncheckAll &#8211; VatWeb &lt;CODE&gt; Blog"/>
+    <meta property="og:title" content="Small app on Heroku for free &#8211; VatWeb &lt;CODE&gt; Blog"/>
     <meta property="og:type" content="blog"/>
-    <meta property="og:url" content="http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/"/>
+    <meta property="og:url" content="http://vincentaudebert.github.io/heroku/free/hosting/2014/10/04/small-app-on-heroku-for-free/"/>
     <meta property="og:image" content="/ico/apple-touch-icon-144-precomposed.png"/>
     <meta property="og:description" content="You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new"/>
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/">
-    <meta name="twitter:title" content="AngularJS 1.2 - checkAll/uncheckAll &#8211; VatWeb &lt;CODE&gt; Blog">
+    <meta name="twitter:url" content="http://vincentaudebert.github.io/heroku/free/hosting/2014/10/04/small-app-on-heroku-for-free/">
+    <meta name="twitter:title" content="Small app on Heroku for free &#8211; VatWeb &lt;CODE&gt; Blog">
     <meta name="twitter:description" content="You can retweet Justin Bieber... or you can check out VatWeb coding blog and learn something new">
     <meta name="twitter:image" content="/ico/apple-touch-icon-144-precomposed.png">
     <meta name="twitter:creator" content="@vatweb">
@@ -64,22 +64,40 @@
     <div class="post p2 p-responsive wrap" role="main">
       <div class="measure">
         <div class="post-header mb2">
-  <h1 class="py2">AngularJS 1.2 - checkAll/uncheckAll</h1>
-  <span class="post-meta">Aug 22, 2014</span>
+  <h1 class="py2">Small app on Heroku for free</h1>
+  <span class="post-meta">Oct 4, 2014</span>
 </div>
 
 <article class="post-content">
-  <p>It has been a while I didn’t post. Sorry, I got busy with my new job.</p>
+  <p>I got into Heroku a few weeks ago now and I think it’s time to give you my feedback.</p>
 
-<p>Thanks to this new job, I had to learn AngularJS. I must say I’m really surprised and happy about it!</p>
+<p>I remember when I started web development pretty much 10 years ago, deploying websites was a real pain and you had to cross your fingers really strongly to not crash your website for few minutes or hours/days in the worst cases.</p>
 
-<p>It’s for this same job that I had to do a checkAll/uncheckAll functionnality. I found this page: <a href="http://dotnetpanda.blogspot.co.nz/2013/12/lets-do-check-all-and-uncheck-all.html">http://dotnetpanda.blogspot.co.nz/2013/12/lets-do-check-all-and-uncheck-all.html</a></p>
+<p>Nowadays, thanks to big improvements in web technologies, by using a performant fullstack like <a href="http://mean.io">MEAN.io</a> or <a href="http://rubyonrails.org/">Ruby on Rails</a> and a GIT based host like <a href="http://heroku.com/">Heroku</a> you can deploy your app using only 1 command line like this one for Heroku: <code>git push heroku master</code></p>
 
-<p>I tried to apply it but it wasn’t working for me…</p>
+<p>That’s magic, really efficient, good for your nerves and your brain and also AFFORDABLE!</p>
 
-<p>Found out that it’s because this version is only compatible with AngularJS 1.1 but once you are on AngularJS 1.2 and above it doesn’t work.</p>
+<p>Indeed, Heroku offers a free starter option which allows you to play a bit with their backoffice and see how it works. This offer (1 free dyno) is perfect for small apps or low traffic websites and once again, is completely free. So what are the cons? After the potential lack of power for high traffic website, the main one is that if you have only the free dyno, this one will go asleep after 1 hour of non activity on your app. Pretty bad and to get out of its idling state on the next loading, it can take sometimes more than 7 seconds!</p>
 
-<p>You can find my version, compatible with AngularJS 1.2 (but not with prior versions which is… weird…) on this JSfiddle: <a href="http://jsfiddle.net/vatweb/g1Lem3Lw/">http://jsfiddle.net/vatweb/g1Lem3Lw/</a></p>
+<h3 id="whats-the-trick">What’s the trick?</h3>
+
+<p>Thanks god there is really easy and free work around to avoid your dyno to go into his sleep mode. This is called “Monitoring”. Basically, monotoring your app will call it every X minutes to check if your server is still up and will record response time and many other data.</p>
+
+<p>One good free monitoring service is <a href="http://uptimerobot.com/">UptimeRobot</a>. It’s currently pinging my heroku server every 45mins and keeping my response time under 200ms. By calling my server every 45mins I prevent it idling and keep it efficient/awake for the next “real” call.
+As I was saying in this <a href="http://vincentaudebert.github.io/frameworks/node/angular/nosql/2014/09/26/mean-io-it-is-mean/">previous post</a> (cf Bonus point #2), Heroku has a great response time.</p>
+
+<h3 id="what-about-the-database">What about the database?</h3>
+
+<p>Once you’ve solved this idling problem, you will face some other small problems like finding a free Heroku add-on for your database.
+By default Heroku includes a <a href="https://addons.heroku.com/heroku-postgresql">Postgres SQL database</a> which is free for less than 10 000 rows which should be enough for small apps.</p>
+
+<p>What I recommend is just switching to <a href="http://mean.io">MEAN.io</a> and install the database add-on <a href="https://addons.heroku.com/mongolab#sandbox">MongoLab</a> which is free under 500MB.</p>
+
+<p>You will work only using Javascript and MEAN is a really powerful project starter for small apps. And Heroku accepts node.js apps so no excuses! :)</p>
+
+<h3 id="bonus-service-that-i-really-like">Bonus service that I really like</h3>
+
+<p>If you want to upload files really easily, Heroku recommends using Amazon S3. Of course, it depends of your needs but I highly recommend <a href="https://addons.heroku.com/filepicker">FilePicker.io</a> which is another free add-on if you upload less than 500 files / month and your files are lighter than 20MB. They provide all the file upload system to S3 + the UI and just return a URL and file properties. Ready to use and provides you data to store in your MongoDB or to use directly in your app!</p>
 
 
 </article>

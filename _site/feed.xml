@@ -7,6 +7,219 @@
     <atom:link href="http://vincentaudebert.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Meta tags for Facebook, Twitter and Google+</title>
+        <description>&lt;p&gt;A really quick post about meta tags and a nice way to make your page sharing more accurate/attractive on Facebook, Twitter, Google+ and all the main other social networks.&lt;/p&gt;
+
+&lt;p&gt;I think the first one to start with specific header meta tags was Facebook. With their own “bot” called OpenGraph, they scan websites and target first specific meta tags in your &lt;code&gt;head&lt;/code&gt; tag. If you don’t have these tags, they might fall back to your default ones but I saw many times this system failing and/or putting something broken/not relevant in place of your actual page title or description. So it’s probably better to just add them to your page just to be sure your saving is safe.&lt;/p&gt;
+
+&lt;h3 id=&quot;facebook&quot;&gt;Facebook&lt;/h3&gt;
+&lt;p&gt;Let’s have a look to Facebook specific meta tags.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Title Here&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:type&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:url&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.example.com/&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://example.com/image.jpg&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Description Here&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:site_name&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Site Name, i.e. Moz&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:published_time&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;2013-09-17T05:59:00+01:00&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:modified_time&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;2013-09-16T19:08:47+01:00&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:section&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Article Section&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:tag&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Article Tag&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;fb:admins&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Facebook numberic ID&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I think everything is pretty clear and well named.
+I’ve applied this example for this blog (as you can see in the source):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VatWeb &amp;lt;CODE&amp;gt; Blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:type&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:url&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://vincentaudebert.github.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/ico/apple-touch-icon-144-precomposed.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You will see it if you share my page on Facebook. I found much more fun to put a specific Facebook related message as a description instead of just my page description.&lt;/p&gt;
+
+&lt;h3 id=&quot;twitter&quot;&gt;Twitter&lt;/h3&gt;
+&lt;p&gt;And now Twitter specific meta tags, called “Twitter card”.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:card&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;summary_large_image&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:site&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@publisher_handle&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Page Title&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Page description less than 200 characters&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:creator&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@author_handle&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Twitter summary card with large image must be at least 280x150px --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:image:src&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.example.com/image.html&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I’ve applied this example for this blog (as you can see in the source):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:card&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;summary&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:url&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://vincentaudebert.github.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VatWeb &amp;lt;CODE&amp;gt; Blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;You can retweet Justin Bieber... or you can check out VatWeb coding blog and learn something new&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/ico/apple-touch-icon-144-precomposed.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:creator&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@vatweb&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Same than for Facebook, I chose to put a Twitter related message as a description.&lt;/p&gt;
+
+&lt;h3 id=&quot;google&quot;&gt;Google+&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Google Authorship and Publisher Markup --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/[Google+_Profile]/posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;publisher&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”https://plus.google.com/[Google+_Page_Profile]&amp;quot;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Schema.org markup for Google+ --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;The Name or Title Here&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;This is the page description&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.example.com/image.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For Google+, I chose to reuse my Facebook description, and I don’t have a Google+ profile, so I don’t specify any profile which gives:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VatWeb &amp;lt;CODE&amp;gt; Blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/ico/apple-touch-icon-144-precomposed.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;linkedin&quot;&gt;LinkedIn&lt;/h3&gt;
+
+&lt;p&gt;So far from what I know, LinkedIn is using the same tags than Facebook.&lt;/p&gt;
+
+&lt;h3 id=&quot;sources&quot;&gt;Sources&lt;/h3&gt;
+
+&lt;p&gt;This page is based using &lt;a href=&quot;http://moz.com/blog/meta-data-templates-123&quot;&gt;this blog post&lt;/a&gt; and &lt;a href=&quot;http://www.iacquire.com/blog/18-meta-tags-every-webpage-should-have-in-2013&quot;&gt;this other page&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 11 Oct 2014 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/html/meta/share/2014/10/11/meta-tags-facebook-twitter-google/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/html/meta/share/2014/10/11/meta-tags-facebook-twitter-google/</guid>
+      </item>
+    
+      <item>
+        <title>Small app on Heroku for free</title>
+        <description>&lt;p&gt;I got into Heroku a few weeks ago now and I think it’s time to give you my feedback.&lt;/p&gt;
+
+&lt;p&gt;I remember when I started web development pretty much 10 years ago, deploying websites was a real pain and you had to cross your fingers really strongly to not crash your website for few minutes or hours/days in the worst cases.&lt;/p&gt;
+
+&lt;p&gt;Nowadays, thanks to big improvements in web technologies, by using a performant fullstack like &lt;a href=&quot;http://mean.io&quot;&gt;MEAN.io&lt;/a&gt; or &lt;a href=&quot;http://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt; and a GIT based host like &lt;a href=&quot;http://heroku.com/&quot;&gt;Heroku&lt;/a&gt; you can deploy your app using only 1 command line like this one for Heroku: &lt;code&gt;git push heroku master&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s magic, really efficient, good for your nerves and your brain and also AFFORDABLE!&lt;/p&gt;
+
+&lt;p&gt;Indeed, Heroku offers a free starter option which allows you to play a bit with their backoffice and see how it works. This offer (1 free dyno) is perfect for small apps or low traffic websites and once again, is completely free. So what are the cons? After the potential lack of power for high traffic website, the main one is that if you have only the free dyno, this one will go asleep after 1 hour of non activity on your app. Pretty bad and to get out of its idling state on the next loading, it can take sometimes more than 7 seconds!&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-the-trick&quot;&gt;What’s the trick?&lt;/h3&gt;
+
+&lt;p&gt;Thanks god there is really easy and free work around to avoid your dyno to go into his sleep mode. This is called “Monitoring”. Basically, monotoring your app will call it every X minutes to check if your server is still up and will record response time and many other data.&lt;/p&gt;
+
+&lt;p&gt;One good free monitoring service is &lt;a href=&quot;http://uptimerobot.com/&quot;&gt;UptimeRobot&lt;/a&gt;. It’s currently pinging my heroku server every 45mins and keeping my response time under 200ms. By calling my server every 45mins I prevent it idling and keep it efficient/awake for the next “real” call.
+As I was saying in this &lt;a href=&quot;http://vincentaudebert.github.io/frameworks/node/angular/nosql/2014/09/26/mean-io-it-is-mean/&quot;&gt;previous post&lt;/a&gt; (cf Bonus point #2), Heroku has a great response time.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-about-the-database&quot;&gt;What about the database?&lt;/h3&gt;
+
+&lt;p&gt;Once you’ve solved this idling problem, you will face some other small problems like finding a free Heroku add-on for your database.
+By default Heroku includes a &lt;a href=&quot;https://addons.heroku.com/heroku-postgresql&quot;&gt;Postgres SQL database&lt;/a&gt; which is free for less than 10 000 rows which should be enough for small apps.&lt;/p&gt;
+
+&lt;p&gt;What I recommend is just switching to &lt;a href=&quot;http://mean.io&quot;&gt;MEAN.io&lt;/a&gt; and install the database add-on &lt;a href=&quot;https://addons.heroku.com/mongolab#sandbox&quot;&gt;MongoLab&lt;/a&gt; which is free under 500MB.&lt;/p&gt;
+
+&lt;p&gt;You will work only using Javascript and MEAN is a really powerful project starter for small apps. And Heroku accepts node.js apps so no excuses! :)&lt;/p&gt;
+
+&lt;h3 id=&quot;bonus-service-that-i-really-like&quot;&gt;Bonus service that I really like&lt;/h3&gt;
+
+&lt;p&gt;If you want to upload files really easily, Heroku recommends using Amazon S3. Of course, it depends of your needs but I highly recommend &lt;a href=&quot;https://addons.heroku.com/filepicker&quot;&gt;FilePicker.io&lt;/a&gt; which is another free add-on if you upload less than 500 files / month and your files are lighter than 20MB. They provide all the file upload system to S3 + the UI and just return a URL and file properties. Ready to use and provides you data to store in your MongoDB or to use directly in your app!&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 04 Oct 2014 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/heroku/free/hosting/2014/10/04/small-app-on-heroku-for-free/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/heroku/free/hosting/2014/10/04/small-app-on-heroku-for-free/</guid>
+      </item>
+    
+      <item>
+        <title>MEAN.io... it&#39;s mean!</title>
+        <description>&lt;p&gt;Busy busy busy!&lt;/p&gt;
+
+&lt;p&gt;For the last few weeks, I’ve been really busy between my job and a personal project.&lt;/p&gt;
+
+&lt;p&gt;This personal project was really interesting as I discovered a awesome new project starter called &lt;strong&gt;MEAN.io&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;MEAN stands for MongoDB Express.js AngularJS Node.js&lt;/p&gt;
+
+&lt;p&gt;From these technologies I knew only AngularJS and what I can say is that it’s amazingly powerful! I would say MEAN represents a really easy and quick way to start and realize a small project. As it’s based on MongoDB, the NoSQL database might be too limited for really big projects but I would highly recommend it for small presentation websites or easy CRUD data management.&lt;/p&gt;
+
+&lt;p&gt;To get started quickly, first have a look at the official website: &lt;a href=&quot;http://mean.io&quot;&gt;http://mean.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You will need npm, Grunt, Bower and all these packages you should already have installed anyway if you are an angular user.&lt;/p&gt;
+
+&lt;p&gt;And then let’s get your mind blowed away:&lt;/p&gt;
+
+&lt;p&gt;First to setup all your app, execute this in your terminal:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;meanio&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@latest&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmdline&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myApp&lt;/span&gt;                    &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myApp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;            &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grunt&lt;/span&gt;                              &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Launch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that you can also run &lt;code&gt;node server&lt;/code&gt; instead of &lt;code&gt;grunt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After this have a look to the &lt;a href=&quot;http://mean.io/#!/docs&quot;&gt;documentation&lt;/a&gt; and explore the folder called “articles” inside your “packages” one. It will give you an idea of a basic CRUD system. And then yes… it’s as easy as this!&lt;/p&gt;
+
+&lt;p&gt;I would say that the most complicated thing I faced on my small project was probably to use/get foreign keys with mongoose but that really well documented &lt;a href=&quot;http://mongoosejs.com/docs/populate.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Other good thing, maybe not for everybody, is that you will write only Javascript as all these technologies are using Javascript. You won’t put anymore &lt;code&gt;;&lt;/code&gt; in your python code when you just switch from Javascript front end! YAY!&lt;/p&gt;
+
+&lt;h3 id=&quot;bonus-point&quot;&gt;Bonus point&lt;/h3&gt;
+&lt;p&gt;Big bonus point for mean is that you can easily deploy your app on &lt;a href=&quot;http://heroku.com&quot;&gt;Heroku&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Behind its complicated terms, Heroku is a powerful web host and you will be able to deploy your app online by using this magic command line: &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git push heroku master&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Yes, everything is as easy as this!&lt;/strong&gt; and that’s the magic about the combo Mean+Heroku!&lt;/p&gt;
+
+&lt;h3 id=&quot;bonus-point-2&quot;&gt;Bonus point #2&lt;/h3&gt;
+&lt;p&gt;I will post a new article soon about using Heroku for your devs/small projects but I was using a monitoring system on my app and noticed that before switching to MEAN, I was using a standard RoR app and my loading time was between 150/200ms. With MEAN it’s only between 80/150ms.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 27 Sep 2014 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/frameworks/node/angular/nosql/2014/09/27/mean-io-it-is-mean/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/frameworks/node/angular/nosql/2014/09/27/mean-io-it-is-mean/</guid>
+      </item>
+    
+      <item>
+        <title>How to test properly a string var in Javascript?</title>
+        <description>&lt;p&gt;Sometimes it’s good to remind the basics.&lt;/p&gt;
+
+&lt;p&gt;Today, I was trying to test if a &lt;code&gt;Date&lt;/code&gt; object that I made becoming a string using &lt;code&gt;toISOString()&lt;/code&gt; was a string.&lt;/p&gt;
+
+&lt;p&gt;And I immediately thought about &lt;code&gt;if(date instanceof String)&lt;/code&gt; but this was always &lt;code&gt;false&lt;/code&gt;…&lt;/p&gt;
+
+&lt;p&gt;And then I found this post: &lt;a href=&quot;http://stackoverflow.com/a/21605936&quot;&gt;http://stackoverflow.com/a/21605936&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It was painful to see how sometimes you forget that Javascript can be crap and you need a basic reminder.&lt;/p&gt;
+
+&lt;p&gt;I created &lt;strong&gt;&lt;a href=&quot;http://jsfiddle.net/vatweb/Lcw7fz88/&quot;&gt;a little JSFiddle&lt;/a&gt;&lt;/strong&gt; to show exactly what I wanted to do and to make obvious the difference between literals and objects.
+But you can also see the code just here:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toISOString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//false&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//false&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//Recommendation&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//For more security keep testing the two ways&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, another link you might find useful on the Literals Vs Objects topic: &lt;a href=&quot;http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals&quot;&gt;http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 11 Sep 2014 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/javascript/string/2014/09/11/javascript-test-string-date/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/javascript/string/2014/09/11/javascript-test-string-date/</guid>
+      </item>
+    
+      <item>
         <title>Contact form with no server side</title>
         <description>&lt;p&gt;While I was redesigning my personal website &lt;a href=&quot;http://vatweb.fr&quot;&gt;vatweb.fr&lt;/a&gt;, I really didn’t want to have a server side involved just to send a basic contact form…&lt;/p&gt;
 
@@ -27,9 +240,9 @@
 &lt;p&gt;Of course feel free to add some bootstrap classes and/or angularJS form validation :)&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 30 Aug 2014 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/html/form/2014/08/30/brace-io-contact-form-no-server-side/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/html/form/2014/08/30/brace-io-contact-form-no-server-side/</guid>
+        <pubDate>Thu, 04 Sep 2014 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/html/form/2014/09/04/brace-io-contact-form-no-server-side/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/html/form/2014/09/04/brace-io-contact-form-no-server-side/</guid>
       </item>
     
       <item>
