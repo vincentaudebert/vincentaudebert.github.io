@@ -52,7 +52,7 @@ The callback function is really usefull if you need to update your database or t
 
 ###Bonus point (the famous one ;))
 
-Don't forget to add the header `@celery.task` to your method and you can give some params like `acks_late=True` and `max_retry=5` to requeue your task automatically if there is an error.
+Don't forget to add the header `@celery.task` to your method and you can give some params like `acks_late=True` and `max_retry=5` to requeue your task automatically if your worker crash. You can also use .retry() if you catch any exception and want to requeue your task
 
 {% highlight python %}
 @staticmethod
@@ -69,7 +69,8 @@ def processSomeProducts(self, start, end):
 
 It's recommended to do the same for `processFinished()`
 
-You can find more documentation on these Celery functions [here] [2]
+You can find more documentation on these Celery functions [here] [2] and some doc about [acks_late and retry] [3]
 
   [1]: http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html
   [2]: http://celery.readthedocs.org/en/latest/userguide/canvas.html#the-primitives
+  [3]: http://celery.readthedocs.org/en/latest/faq.html#faq-acks-late-vs-retry
