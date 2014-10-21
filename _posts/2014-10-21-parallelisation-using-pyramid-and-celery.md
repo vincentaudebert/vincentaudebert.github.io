@@ -46,7 +46,7 @@ The callback function is really usefull if you need to update your database or t
 
 ###Bonus point (the famous one ;))
 
-Don't forget to add the header `@celery.task` to your method and you can give some params like `acks_late=True` or `max_retry=5` to requeue your task automatically if there is an error.
+Don't forget to add the header `@celery.task` to your method and you can give some params like `acks_late=True` and `max_retry=5` to requeue your task automatically if there is an error.
 
 {% highlight python %}
 @staticmethod
