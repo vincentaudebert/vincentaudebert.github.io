@@ -55,7 +55,7 @@ def processSomeProducts(self, start, end):
 	try:
 		#Your actions
 		return True
-	except Exception as e:
+	except Exception as exc:
 		#Error management/logging
 		#Will retry in 60 seconds
 		raise YourClass.processSomeProducts.retry(exc=exc, countdown=60)
