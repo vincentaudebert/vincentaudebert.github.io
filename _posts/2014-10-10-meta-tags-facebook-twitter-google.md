@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parallelisation using Celery in Pyramid
+title: Meta tags for Facebook, Twitter and Google+
 date:       2014-10-10 15:31:19
 summary:    Sharing can be love... but must be accurate!
 categories: html meta share
