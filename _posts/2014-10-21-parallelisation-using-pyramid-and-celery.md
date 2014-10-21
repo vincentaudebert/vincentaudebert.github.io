@@ -12,9 +12,9 @@ But first, let's talk languages and versions:
 For this article, I'm using Python on version 2.7, the web framework Pyramid on version 1.5 and Celery on version 3.
 
 Parallelisation is really powerful to reduce a lot your loading time/processing time.
-Basically, without it, your code will be executed by one server. With parallelisation you split a task in many smaller ones to be processed by many servers. There are many benefits but the main one is definitely to avoid loading locks on Database usage or CPU usage. This is really efficient on Amazon Web Services. Indeed, once a node is overloading in terms of tasks, AWS should create a new one and spread the tasks on all the nodes. I won't go too much in the details as it's not my expertise but for those interested, [you can have complementary info here] [1]
+Basically, without it, your code will be executed by one server. With parallelisation you split a task in many smaller ones to be processed by many servers. There are many benefits but the main one is definitely to avoid loading locks on Database usage or CPU usage. This is really efficient on Amazon Web Services. Indeed, once a node is overloading in terms of tasks, AWS should create a new one and spread the tasks on all the nodes. I won't go too much in the details as it's not my expertise but for those interested, [you can have complementary info here] [1].
 
-###Example case
+##Example case
 So let's dive into the code. Let's say you have a warehouse with many products. You want to process each products by chunks instead of processing the whole warehouse and crashing your server.
 
 You will split big task, let's call it `processWholeWarehouse()` into smaller tasks `processSomeProducts(start, end)` (processing only 500 products) and you will append all these small taks to a list:
@@ -43,6 +43,25 @@ chain(product_group, processFinished.s()).apply_async()
 {% endhighlight %}
 
 The callback function is really usefull if you need to update your database or trigger an event to tell your app that tasks have been processed.
+
+###Bonus
+
+Don't forget to add the header `@celery.task` to your method and you can give some params like `acks_late=True` or `max_retry=5` to requeue your task automatically if there is an error.
+
+{% highlight python %}
+@staticmethod
+@celery.task(acks_late=True, max_retries=5)
+def processSomeProducts(self, start, end):
+	try:
+		#Your actions
+		return True
+	except Exception as e:
+		#Error management/logging
+		#Will retry in 60 seconds
+		raise YourClass.processSomeProducts.retry(exc=exc, countdown=60)
+{% endhighlight %}
+
+It's recommended to do the same for `processFinished()`
 
 You can find more documentation on these Celery functions [here] [2]
 
