@@ -3,7 +3,7 @@ layout: post
 title: Parallelisation using Pyramid and Celery
 date:       2014-10-21 15:31:19
 summary:    Split your big tasks in smaller ones and improve your processing time.
-categories: python pyramid celery aws
+categories: python aws celery
 ---
 
 Today let's see how you can use parallelisation to improve your processing time.
@@ -17,7 +17,7 @@ Basically, without it, your code will be executed by one server. With parallelis
 ##Example case
 So let's dive into the code. Let's say you have a warehouse with many products. You want to process each products by chunks instead of processing the whole warehouse and crashing your server.
 
-First of all, don't forget to import celery functions we will need:
+First of all, let's import the celery function you will use:
 
 {% highlight python %}
 from celery import chain, group
