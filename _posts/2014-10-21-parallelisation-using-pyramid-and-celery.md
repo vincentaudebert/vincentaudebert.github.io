@@ -44,7 +44,7 @@ chain(product_group, processFinished.s()).apply_async()
 
 The callback function is really usefull if you need to update your database or trigger an event to tell your app that tasks have been processed.
 
-###Bonus
+###Bonus point (the famous one ;))
 
 Don't forget to add the header `@celery.task` to your method and you can give some params like `acks_late=True` or `max_retry=5` to requeue your task automatically if there is an error.
 
