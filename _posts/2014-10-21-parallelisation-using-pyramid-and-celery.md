@@ -12,7 +12,7 @@ But first, let's talk languages and versions:
 For this article, I'm using Python on version 2.7, the web framework Pyramid on version 1.5 and Celery on version 3.
 
 Parallelisation is really powerful to reduce a lot your loading time/processing time.
-Basically, without it, your code will be executed by one server. With parallelisation you split a task in many smaller ones to be processed by many servers. There are many benefits but the main one is definitely to avoid loading locks on Database usage or CPU usage. This is really efficient on Amazon Web Services. Indeed, once a node is overloading in terms of tasks, AWS should create a new one and spread the tasks on all the nodes. I won't go too much in the details as it's not my expertise but for those interested, [you can have complementary info here] [1].
+Basically, without it, your code will be executed by one server. With parallelisation you split a task in many smaller ones to be processed by many virtual servers. There are many benefits but the main one is definitely to avoid loading locks on Database usage or CPU usage. This is really efficient on Amazon Web Services. Indeed, once a node is overloading in terms of tasks, AWS should create a new one and spread the tasks on all the nodes. I won't go too much in the details as it's not my expertise but for those interested, [you can have complementary info here] [1].
 
 ##Example case
 So let's dive into the code. Let's say you have a warehouse with many products. You want to process each products by chunks instead of processing the whole warehouse and crashing your server.
