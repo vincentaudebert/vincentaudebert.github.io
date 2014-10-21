@@ -17,13 +17,13 @@ Basically, without it, your code will be executed by one server. With parallelis
 ##Example case
 So let's dive into the code. Let's say you have a warehouse with many products. You want to process each products by chunks instead of processing the whole warehouse and crashing your server.
 
-First of all, let's import the celery function you will use:
+First of all, let's import the Celery functions you will use:
 
 {% highlight python %}
 from celery import chain, group
 {% endhighlight %}
 
-You will split big task, let's call it `processWholeWarehouse()` into smaller tasks `processSomeProducts(start, end)` (processing only 500 products) and you will append all these small taks to a list:
+You will split big task, let's say `processWholeWarehouse()`, into smaller tasks `processSomeProducts(start, end)` (processing only 500 products) and you will append all these small tasks to a list:
 
 {% highlight python %}
 task_list = []
