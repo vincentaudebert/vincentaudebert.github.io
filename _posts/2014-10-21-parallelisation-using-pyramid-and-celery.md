@@ -3,7 +3,7 @@ layout: post
 title: Parallelisation using Pyramid and Celery
 date:       2014-10-21 15:31:19
 summary:    Split your big tasks in smaller ones and improve your processing time.
-categories: python pyramid celery
+categories: python pyramid celery aws
 ---
 
 Today let's see how you can use parallelisation to improve your processing time.
@@ -12,10 +12,16 @@ But first, let's talk languages and versions:
 For this article, I'm using Python on version 2.7, the web framework Pyramid on version 1.5 and Celery on version 3.
 
 Parallelisation is really powerful to reduce a lot your loading time/processing time.
-Basically, without it, your code will be executed by one server. With parallelisation you split a task in many smaller ones to be processed by many virtual servers. There are many benefits but the main one is definitely to avoid loading locks on Database usage or CPU usage. This is really efficient on Amazon Web Services. Indeed, once a node is overloading in terms of tasks, AWS should create a new one and spread the tasks on all the nodes. I won't go too much in the details as it's not my expertise but for those interested, [you can have complementary info here] [1].
+Basically, without it, your code will be executed by one server. With parallelisation you split a task in many smaller ones to be processed by many virtual servers. There are many benefits but the main one is definitely to avoid overloading locks on Database or CPU. This is really efficient with Amazon Web Services (AWS). Indeed, once a node is almost overloading, AWS should create a new one and spread the tasks on all the nodes. I won't go too much in the details as it's not my expertise but for those interested, [you can have complementary info here] [1].
 
 ##Example case
 So let's dive into the code. Let's say you have a warehouse with many products. You want to process each products by chunks instead of processing the whole warehouse and crashing your server.
+
+First of all, don't forget to import celery functions we will need:
+
+{% highlight python %}
+from celery import chain, group
+{% endhighlight %}
 
 You will split big task, let's call it `processWholeWarehouse()` into smaller tasks `processSomeProducts(start, end)` (processing only 500 products) and you will append all these small taks to a list:
 
