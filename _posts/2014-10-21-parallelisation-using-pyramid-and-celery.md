@@ -55,16 +55,15 @@ The callback function is really usefull if you need to update your database or t
 Don't forget to add the header `@celery.task` to your method and you can give some params like `acks_late=True` and `max_retry=5` to requeue your task automatically if your worker crash. You can also use .retry() if you catch any exception and want to requeue your task
 
 {% highlight python %}
-@staticmethod
 @celery.task(acks_late=True, max_retries=5)
-def processSomeProducts(self, start, end):
+def processSomeProducts(group_result, start, end):
 	try:
 		#Your actions
 		return True
 	except Exception as exc:
 		#Error management/logging
 		#Will retry in 60 seconds
-		raise YourClass.processSomeProducts.retry(exc=exc, countdown=60)
+		raise processSomeProducts.retry(exc=exc, countdown=60)
 {% endhighlight %}
 
 It's recommended to do the same for `processFinished()`
