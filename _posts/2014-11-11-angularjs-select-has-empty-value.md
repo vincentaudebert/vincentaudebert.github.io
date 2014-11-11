@@ -17,7 +17,7 @@ Let's say you have this code.
 This might generate something like:
 
 {% highlight html %}
-<select id="item-track" ng-model="selectedBook" ng-options="book.id as book.title for book in books">
+<select class="form-control" ng-model="selectedBook" ng-options="book.id as book.title for book in books">
 	<option value="?" selected="selected"></option>
 	<option value="0">Title Book #1</option>
 	<option value="1">Title Book #2</option>
@@ -38,7 +38,7 @@ It's because your model `selectedBook` isn't initialized with a value. In order 
 In this code we specify a initial value for `selectedBook`. It will generates this:
 
 {% highlight html %}
-<select id="item-track" ng-model="selectedBook" ng-options="book.id as book.title for book in books" ng-init="selectedBook=0">
+<select class="form-control" ng-model="selectedBook" ng-options="book.id as book.title for book in books" ng-init="selectedBook=0">
 	<option value="0" selected="selected">Title Book #1</option>
 	<option value="1">Title Book #2</option>
 	<option value="2">Title Book #3</option>
