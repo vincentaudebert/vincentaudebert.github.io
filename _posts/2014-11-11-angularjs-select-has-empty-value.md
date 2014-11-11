@@ -27,7 +27,7 @@ This might generate something like:
 
 Why do you get an option with a value `?` and no text inside?
 
-It's because your model `selectedBook` isn't initialized with a value. In order to not select a default actual value, AngularJS generates a empty option and selects it by default.
+It's because your model `selectedBook` isn't initialized with a valid value or, in this case, isn't initiliazed at all. In order to not select a default actual value, AngularJS generates a empty option and selects it by default.
 
 ###How to fix it?
 
