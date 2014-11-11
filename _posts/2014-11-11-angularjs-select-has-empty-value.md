@@ -48,7 +48,7 @@ In this code we specify a initial value for `selectedBook`. It will generates th
 Note that `ng-init` allows functions. So you could call a function `initSelect()` which could wait for another value to initialize `selectedBook` or whatever :)
 
 You can find a JSFiddle for this article [here][1]
-And this article is inspired by this [stackoverflow answer][1]
+And this article is inspired by this [stackoverflow answer][2]
 
   [1]: http://jsfiddle.net/vatweb/e8d6s68a/
   [2]: http://stackoverflow.com/a/13809295/4143960
