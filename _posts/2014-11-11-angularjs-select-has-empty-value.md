@@ -3,7 +3,7 @@ layout: post
 title: AngularJS select has empty value
 date:       2014-11-11 15:31:19
 summary:    Figure out why sometimes AngularJS adds a "?"/empty value into select elements
-categories: angular js select
+categories: angular javascript select
 ---
 
 A quick post to understand why AngularJS adds a empty value at the beginning of your select box.
