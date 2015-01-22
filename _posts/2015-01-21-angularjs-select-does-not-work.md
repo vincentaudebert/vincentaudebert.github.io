@@ -31,3 +31,7 @@ Here is the right code.
 {% endhighlight %}
 
 Lesson learnt!
+
+PS: Don't forget [to initialize selectedBook][1]
+
+	[1]: http://vincentaudebert.github.io/angular/javascript/select/2014/11/11/angularjs-select-has-empty-value/
