@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS How to prevent button to submit a form
-date:       2015-01-21 15:31:19
+date:       2015-01-29 15:31:19
 summary:    A normal button submit your form when you just want it to trigger click event?
 categories: angular javascript form
 ---
