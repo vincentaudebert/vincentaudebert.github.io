@@ -39,6 +39,6 @@ Solution inspired by [this useful post][3].
 
 **N.B.: It's always cleaner/good practice to be clear in your HTML code and you should use `<input type="submit">` instead of a `<button type="submit">`**
 
-  [1]: http://jsfiddle.net/vatweb/y85cytpq/
-  [2]: http://jsfiddle.net/vatweb/mu4mhm59/
+  [1]: http://jsfiddle.net/vatweb/y85cytpq/1/
+  [2]: http://jsfiddle.net/vatweb/mu4mhm59/2/
   [3]: https://github.com/angular/angular.js/issues/6017
