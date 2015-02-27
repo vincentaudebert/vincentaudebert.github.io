@@ -23,7 +23,7 @@ As you can notice on [this JSFiddle][1] (open your console), both buttons are su
 ###How to fix it?
 Here comes the easy answer... and the "attribute jungle" of AngularJS :)
 
-You simply need to add what type of button is your button. Legit.
+You simply need to add what type of button your button is.
 
 Here is the right code.
 {% highlight html %}
