@@ -1,9 +1,9 @@
 ---
 layout: post
-title: AngularJS Datetime picker inside an accordion not working/displayed
+title: AngularJS Datepicker inside an accordion not working/displayed
 date:       2015-04-13 15:31:19
-summary:    How to modify a value stored in parent scope from a child?
-categories: angular javascript scope
+summary:    Datepicker not working/displayed properly inside an accordion tag.
+categories: angular accordion datepicker
 ---
 
 A quick post about a "funny" bug I faced yesterday.
