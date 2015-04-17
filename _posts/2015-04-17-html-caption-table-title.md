@@ -2,7 +2,7 @@
 layout: post
 title: The most forgotten HTML tag for a table: caption
 date:       2015-04-13 15:31:19
-summary:    Want to add a "title" to your table?
+summary:    When you want to add a "title" to your table
 categories: html tag caption
 ---
 
