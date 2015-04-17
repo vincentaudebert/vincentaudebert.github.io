@@ -1,7 +1,7 @@
 ---
 layout: post
-title: The most forgotten HTML tag for a table... <caption>
-date:       2015-04-13 15:31:19
+title: The most forgotten HTML tag for a table... caption
+date:       2015-04-17 15:31:19
 summary:    When you want to add a "title" to your table
 categories: html tag caption
 ---
