@@ -16,7 +16,7 @@ And here comes `z-index`.
 Using jQuery, the best solution is to change on the fly `z-index` property for class `.picker-dialog`.
 Use a `z-index` > 1050 or the value of your modal one.
 
-Here is the piece of code I use.
+Here is the code I use.
 {% highlight javascript %}
 $('.picker-dialog').css('z-index', 5000);
 {% endhighlight %}
