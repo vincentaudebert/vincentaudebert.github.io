@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Twitter Bootstrap 3: Change your navbar colors
+title: Twitter Bootstrap 3 - Change your navbar colors
 date:       2015-07-28 15:31:19
 summary:    Really cool CSS generator
 categories: css color generator 
