@@ -9,7 +9,7 @@ categories: polymer element
 Recently I was looking for a service that could provide a user authentication based on social networks.
 I ended on [oneall.com] [1]
 
-After having a look to the documentation I decided to build a polymer element for this service.
+After having a look at the documentation I decided to build a polymer element for this service.
 
 A month ago, I released v1.0 but this version did not include premium methods.
 Here comes [v1.1] [2] that now supports all the methods provided by OneAll.
