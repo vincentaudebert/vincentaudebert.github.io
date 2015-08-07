@@ -23,7 +23,7 @@ To give you a preview, this is what you need to display this service on your web
   <div id="oneall-container">Login here</div> [if you use doRenderUi]
   [leave empty if you use doPopupUi]
 </oneall-social-login>
-{% highlight html %}
+{% endhighlight %}
 
 You can find more examples in the `demo` folder on github.
 
