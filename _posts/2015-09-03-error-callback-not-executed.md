@@ -13,7 +13,7 @@ Unfortunately, we realized that since we made this change our `error` callbacks 
 
 I first thought the problem was linked somehow to the server return as we changed the way we handle exceptions. But it was not.
 
-The real weird thing was that we were always going into the `success` callback and never into the error one even with an error 500 or 404 or whatever...
+The real weird thing was that we were always going into the `success` callback and never into the `error` one even with an error 500 or 404 or whatever...
 
 So I googled it (quite a lot) and then found this brilliant [stackoverflow answer] [1] which gives the right answer (for me) on the second answer.
 
