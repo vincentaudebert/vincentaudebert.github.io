@@ -53,7 +53,7 @@ $httpProvider.interceptors.push(function ($timeout, $q, $injector) {
 ...
 {% endhighlight %}
 
-Indeed in case of rejection you need to return it otherwise Angular thinks that everything is fine and go through the `success` callback!
+Indeed in case your promise gets rejected, you need to return it otherwise Angular thinks that everything is fine and go through the `success` callback!
 
 Hope this helps!
 
