@@ -57,5 +57,4 @@ Indeed in case of rejection you need to return it otherwise Angular thinks that 
 
 Hope this helps!
 
-
   [1]: http://stackoverflow.com/questions/15888162/angularjs-http-error-function-never-called
