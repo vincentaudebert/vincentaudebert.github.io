@@ -7,7 +7,7 @@ categories: angularjs http callback
 ---
 
 Just found a solution to my problem and thought it would be a good idea to share it.
-Few days ago we changed our structure and we are now using factories to call our API.
+Few days ago we changed our structure and we are now using factories to call our API and return promises.
 
 Unfortunately, we realized that since we made this change our `error` callbacks were not executed anymore.
 
