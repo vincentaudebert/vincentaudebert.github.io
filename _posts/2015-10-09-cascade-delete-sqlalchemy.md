@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SqlAlchemy cascade delete
+title: Python SQLAlchemy cascade delete
 date:       2015-10-09 15:31:19
 summary:    Getting a foreign key error when deleting an object with dependencies?
 categories: python sql
