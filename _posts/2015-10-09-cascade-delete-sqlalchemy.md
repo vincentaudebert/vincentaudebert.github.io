@@ -6,7 +6,7 @@ summary:    Getting a foreign key error when deleting an object with dependencie
 categories: python sql
 ---
 
-Quick tip if you get in trouble with a foreign key dependency even if you specified a cascade delete in your models.
+Quick tip if you get in trouble with a foreign key dependency even if you have specified a cascade delete in your models.
 
 Using SQLAlchemy, to specify a cascade delete you should have `cascade='all, delete'` on your parent table.
 Ok but then when you execute something like:
