@@ -8,7 +8,7 @@ categories: javascript react
 
 Just started at my new job! Exciting!
 
-And my first mission was to deal with this [React component] [1]
+And my first mission was to deal with this [React component] [1].
 
 We wanted to have a nice demo page on a github page for this component.
 
