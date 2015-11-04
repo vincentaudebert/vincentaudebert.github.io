@@ -16,7 +16,7 @@ Something [like this] [2]...
 
 And it was actually fairly easy. Just had to use [rackt-cli] [3].
 
-Once rackt-cli is installed (using `npm install -g rackt-cli`), create a folder `examples` and then everything inside this folder will be taken to a github page for your project using the command `rackt pages`.
+Once rackt-cli is installed (using `npm install -g rackt-cli`), create a folder `examples` at the root of your project and then everything inside this folder will be taken to a github page for your project using the command `rackt pages`.
 
 Easy right?
 
