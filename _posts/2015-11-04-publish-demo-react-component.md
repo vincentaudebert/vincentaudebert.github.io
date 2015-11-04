@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Publish demo of your React conmponent on GitHub
+title: Publish demo of your React component on GitHub
 date:       2015-11-04 15:31:19
 summary:    Made super easy by rackt-cli
 categories: javascript react
