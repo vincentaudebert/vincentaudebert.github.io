@@ -4,6 +4,7 @@ title: How to test properly a string var in Javascript?
 date:       2014-09-10 15:31:19
 summary:    Reminder how to test properly a string var in Javascript
 categories: javascript string
+redirect_from: "/javascript/string/2014/09/11/javascript-test-string-date/"
 ---
 
 Sometimes it's good to remind the basics.
