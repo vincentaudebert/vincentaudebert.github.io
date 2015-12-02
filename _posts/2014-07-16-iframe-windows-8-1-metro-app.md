@@ -5,6 +5,7 @@ date:       2014-07-16 15:31:19
 summary:    Manage iframes in a Windows 8.1 metro app
 categories: windows app
 redirect_from: "/2014/07/16/iframe-windows-8-1-metro-app.html"
+redirect_from: "/windows/app/2014/07/17/iframe-windows-8-1-metro-app/"
 ---
 
 Let’s start this blog with the problem which gave me the idea of starting it.
