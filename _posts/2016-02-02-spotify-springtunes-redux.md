@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Control your Spotify client with your browser
-date:       2016-02-02 15:31:19
+date:       2016-02-01 15:31:19
 summary:    When playing with Redux leads to a cool little npm package
 categories: javascript react
 ---
@@ -12,7 +12,7 @@ So I got the chance to explore [Redux] [1]... and I learnt A LOT! What a really 
 
 ### Get started
 
-First if like me you are not used to Flux and even less to Redux, you should check these [cool videos (tutorials)] [2] made by the creator of Redux. It will give you some really useful basics and help you to understand how Redux works.
+First if like me you are not used to Flux and even less to Redux, you should check these [cool tutorial videos] [2] made by the creator of Redux. It will give you some really useful basics and help you to understand how Redux works.
 
 ### Starter kit
 
