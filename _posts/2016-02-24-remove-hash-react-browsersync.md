@@ -12,7 +12,7 @@ But what if you want to have "proper" urls like `domain.com/foo/bar` instead of 
 
 ### The React part
 
-Inside your [React][3] app you will need to make a simple change.
+Inside your [React] [3] app you will need to make a simple change.
 Change the `history` argument for your `<Router>` from `hashHistory` to `browserHistory`
 
 ```
@@ -27,7 +27,7 @@ ReactDOM.render ((
 
 ### The BrowserSync part
 
-Now the other part is to make your [BrowserSync][4] server (gulp task here) able to serve these urls.
+Now the other part is to make your [BrowserSync] [4] server (gulp task here) able to serve these urls.
 To do so, just add some middleware in your config:
 
 ```
@@ -49,8 +49,8 @@ gulp.task('browser-sync', function() {
 And then you should be able to access to `domain.com/foo/bar`
 
 This post is based on 2 stackoverflow posts:
-- [One to remove the hash part][1]
-- [The other one to configure BrowserSync][2]
+- [One to remove the hash part] [1]
+- [The other one to configure BrowserSync] [2]
 
   [1]: http://stackoverflow.com/a/33108975/2462089
   [2]: http://stackoverflow.com/a/33798349/2462089
