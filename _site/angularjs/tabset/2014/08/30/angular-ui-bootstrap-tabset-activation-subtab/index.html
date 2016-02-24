@@ -69,26 +69,26 @@
 </div>
 
 <article class="post-content">
-  <p>Few problems solved in this post. </p>
+  <p>Few problems solved in this post.</p>
 
 <p>After a long investigation I found quite not clear and not documented how to use <strong>Angular UI Bootstrap tabsets</strong>.
-I was basically trying to have a range of <strong>tabs/subtabs</strong> and just <strong>activating</strong> them using <code>active</code> attribute.</p>
+I was basically trying to have a range of <strong>tabs/subtabs</strong> and just <strong>activating</strong> them using <code class="highlighter-rouge">active</code> attribute.</p>
 
 <h3 id="first-issue">First issue</h3>
 <p>More precisely, this issue: <a href="https://github.com/angular-ui/bootstrap/issues/611">https://github.com/angular-ui/bootstrap/issues/611</a></p>
 
-<p>According to this github issue, it’s not possible to use any expression/function evaluation in <code>active</code> attribute. You have to use a boolean var.</p>
+<p>According to this github issue, it’s not possible to use any expression/function evaluation in <code class="highlighter-rouge">active</code> attribute. You have to use a boolean var.</p>
 
 <p>That’s the reason why I created an array to manage each tabs.</p>
 
 <h3 id="second-problem">Second problem</h3>
 <p>How to activate parent tabs when clicking on a child tab?</p>
 
-<p>To manage this I use the function <code>includes()</code> (<a href="https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stateincludesstatename--params">Documentation</a>) of <code>$state</code> and I use dot-separated names for my routes like “foo.bar”. Thanks to this I can look for “foo” to activate the parent tab and “foo.bar” for the child tab.</p>
+<p>To manage this I use the function <code class="highlighter-rouge">includes()</code> (<a href="https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stateincludesstatename--params">Documentation</a>) of <code class="highlighter-rouge">$state</code> and I use dot-separated names for my routes like “foo.bar”. Thanks to this I can look for “foo” to activate the parent tab and “foo.bar” for the child tab.</p>
 
 <p><strong>You will find a basic 3-level tab example on this JSFiddle: <a href="http://jsfiddle.net/wy8j75r8/3/">http://jsfiddle.net/wy8j75r8/3/</a></strong></p>
 
-<p>Here is another link I used to give me an idea about expression evaluation in <code>active</code>: <a href="http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview">http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview</a></p>
+<p>Here is another link I used to give me an idea about expression evaluation in <code class="highlighter-rouge">active</code>: <a href="http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview">http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview</a></p>
 
 
 </article>

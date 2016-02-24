@@ -73,17 +73,17 @@
 
 <p>After a bit of Googling, I could not find anything better than <a href="http://wufoo.com">Wufoo</a>… Not optimal but it would have done the job.</p>
 
-<p>However, as you might have seen, I change my blog theme too to use <a href="http://pixyll.com/">Pixyll jekyll theme</a>. While I was looking inside the source code, I ended up finding <a href="http://forms.brace.io/">Brace.io</a> in the <code>action</code> attribute of a form. Curious, I had a look and found out that Forms Brace.io allows you really easily to send a form content to your email address. Ideal for a contact form!</p>
+<p>However, as you might have seen, I change my blog theme too to use <a href="http://pixyll.com/">Pixyll jekyll theme</a>. While I was looking inside the source code, I ended up finding <a href="http://forms.brace.io/">Brace.io</a> in the <code class="highlighter-rouge">action</code> attribute of a form. Curious, I had a look and found out that Forms Brace.io allows you really easily to send a form content to your email address. Ideal for a contact form!</p>
 
 <p>You can have a demo directly on this blog as it’s using it for <a href="http://vincentaudebert.github.io/contact/">the contact form</a></p>
 
 <p>And here come the really easy HTML piece of code to build a Brace form:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;https://forms.brace.io/you@youremail.com&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email Address&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;textarea</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span> <span class="na">rows=</span><span class="s">&quot;5&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;What would you like to say?&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Say Hello&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"https://forms.brace.io/you@youremail.com"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email Address"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;textarea</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"content"</span> <span class="na">rows=</span><span class="s">"5"</span> <span class="na">placeholder=</span><span class="s">"What would you like to say?"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Say Hello"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
 <p>Of course feel free to add some bootstrap classes and/or angularJS form validation :)</p>
 

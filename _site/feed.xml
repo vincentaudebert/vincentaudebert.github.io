@@ -7,343 +7,379 @@
     <atom:link href="http://vincentaudebert.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Meta tags for Facebook, Twitter and Google+</title>
-        <description>&lt;p&gt;A really quick post about meta tags and a nice way to make your page sharing more accurate/attractive on Facebook, Twitter, Google+ and all the main other social networks.&lt;/p&gt;
+        <title>Remove hash in a React App served by BrowserSync</title>
+        <description>&lt;p&gt;You probably noticed that by default react app navigation is using the famous &lt;code class=&quot;highlighter-rouge&quot;&gt;/#/&lt;/code&gt; in the url.&lt;/p&gt;
 
-&lt;p&gt;I think the first one to start with specific header meta tags was Facebook. With their own “bot” called OpenGraph, they scan websites and target first specific meta tags in your &lt;code&gt;head&lt;/code&gt; tag. If you don’t have these tags, they might fall back to your default ones but I saw many times this system failing and/or putting something broken/not relevant in place of your actual page title or description. So it’s probably better to just add them to your page just to be sure your saving is safe.&lt;/p&gt;
+&lt;p&gt;But what if you want to have “proper” urls like &lt;code class=&quot;highlighter-rouge&quot;&gt;domain.com/foo/bar&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;domain.com/#/foo/bar&lt;/code&gt;?&lt;/p&gt;
 
-&lt;h3 id=&quot;facebook&quot;&gt;Facebook&lt;/h3&gt;
-&lt;p&gt;Let’s have a look to Facebook specific meta tags.&lt;/p&gt;
+&lt;h3 id=&quot;the-react-part&quot;&gt;The React part&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Title Here&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:type&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:url&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.example.com/&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://example.com/image.jpg&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Description Here&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:site_name&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Site Name, i.e. Moz&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:published_time&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;2013-09-17T05:59:00+01:00&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:modified_time&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;2013-09-16T19:08:47+01:00&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:section&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Article Section&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:tag&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Article Tag&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;fb:admins&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Facebook numberic ID&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Inside your &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; app you will need to make a simple change.
+Change the &lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt; argument for your &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Router&amp;gt;&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;hashHistory&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;browserHistory&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;I think everything is pretty clear and well named.
-I’ve applied this example for this blog (as you can see in the source):&lt;/p&gt;
+&lt;p&gt;```
+import { Router, browserHistory } from ‘react-router’;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VatWeb &amp;lt;CODE&amp;gt; Blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:type&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:url&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://vincentaudebert.github.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/ico/apple-touch-icon-144-precomposed.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ReactDOM.render ((
+ &amp;lt;Router history={browserHistory} /&amp;gt;
+   …
+ &amp;lt;/Router&amp;gt;
+), document.body);
+```&lt;/p&gt;
 
-&lt;p&gt;You will see it if you share my page on Facebook. I found much more fun to put a specific Facebook related message as a description instead of just my page description.&lt;/p&gt;
+&lt;h3 id=&quot;the-browsersync-part&quot;&gt;The BrowserSync part&lt;/h3&gt;
 
-&lt;h3 id=&quot;twitter&quot;&gt;Twitter&lt;/h3&gt;
-&lt;p&gt;And now Twitter specific meta tags, called “Twitter card”.&lt;/p&gt;
+&lt;p&gt;Now the other part is to make your &lt;a href=&quot;https://www.browsersync.io/&quot;&gt;BrowserSync&lt;/a&gt; server (gulp task here) able to serve these urls.
+To do so, just add some middleware in your config:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:card&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;summary_large_image&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:site&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@publisher_handle&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Page Title&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Page description less than 200 characters&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:creator&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@author_handle&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Twitter summary card with large image must be at least 280x150px --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:image:src&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.example.com/image.html&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```
+const historyApiFallback = require(‘connect-history-api-fallback’);&lt;/p&gt;
 
-&lt;p&gt;I’ve applied this example for this blog (as you can see in the source):&lt;/p&gt;
+&lt;p&gt;…&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:card&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;summary&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:url&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://vincentaudebert.github.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:title&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VatWeb &amp;lt;CODE&amp;gt; Blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;You can retweet Justin Bieber... or you can check out VatWeb coding blog and learn something new&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/ico/apple-touch-icon-144-precomposed.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:creator&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@vatweb&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;gulp.task(‘browser-sync’, function() {
+    browserSync({
+        server: {
+            baseDir: ‘./’,
+            middleware: [historyApiFallback()]
+        },
+        notify: false
+    });
+});
+```&lt;/p&gt;
 
-&lt;p&gt;Same than for Facebook, I chose to put a Twitter related message as a description.&lt;/p&gt;
+&lt;p&gt;And then you should be able to access to &lt;code class=&quot;highlighter-rouge&quot;&gt;domain.com/foo/bar&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;google&quot;&gt;Google+&lt;/h3&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Google Authorship and Publisher Markup --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/[Google+_Profile]/posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;publisher&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”https://plus.google.com/[Google+_Page_Profile]&amp;quot;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Schema.org markup for Google+ --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;The Name or Title Here&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;This is the page description&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.example.com/image.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;For Google+, I chose to reuse my Facebook description, and I don’t have a Google+ profile, so I don’t specify any profile which gives:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VatWeb &amp;lt;CODE&amp;gt; Blog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;image&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/ico/apple-touch-icon-144-precomposed.png&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;linkedin&quot;&gt;LinkedIn&lt;/h3&gt;
-
-&lt;p&gt;So far from what I know, LinkedIn is using the same tags than Facebook.&lt;/p&gt;
-
-&lt;h3 id=&quot;sources&quot;&gt;Sources&lt;/h3&gt;
-
-&lt;p&gt;This page is based using &lt;a href=&quot;http://moz.com/blog/meta-data-templates-123&quot;&gt;this blog post&lt;/a&gt; and &lt;a href=&quot;http://www.iacquire.com/blog/18-meta-tags-every-webpage-should-have-in-2013&quot;&gt;this other page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This post is based on 2 stackoverflow posts:
+- &lt;a href=&quot;http://stackoverflow.com/a/33108975/2462089&quot;&gt;One to remove the hash part&lt;/a&gt;
+- &lt;a href=&quot;http://stackoverflow.com/a/33798349/2462089&quot;&gt;The other one to configure BrowserSync&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 11 Oct 2014 04:31:19 +1300</pubDate>
-        <link>http://vincentaudebert.github.io/html/meta/share/2014/10/11/meta-tags-facebook-twitter-google/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/html/meta/share/2014/10/11/meta-tags-facebook-twitter-google/</guid>
+        <pubDate>Wed, 24 Feb 2016 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/javascript/react/2016/02/24/remove-hash-react-browsersync/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/javascript/react/2016/02/24/remove-hash-react-browsersync/</guid>
       </item>
     
       <item>
-        <title>Small app on Heroku for free</title>
-        <description>&lt;p&gt;I got into Heroku a few weeks ago now and I think it’s time to give you my feedback.&lt;/p&gt;
+        <title>Control your Spotify client with your browser</title>
+        <description>&lt;p&gt;The beginning of the year is generally light here in New Zealand. You know… the time everybody gets back to work :)&lt;/p&gt;
 
-&lt;p&gt;I remember when I started web development pretty much 10 years ago, deploying websites was a real pain and you had to cross your fingers really strongly to not crash your website for few minutes or hours/days in the worst cases.&lt;/p&gt;
+&lt;p&gt;So I got the chance to explore &lt;a href=&quot;http://redux.js.org/&quot;&gt;Redux&lt;/a&gt;… and I learnt A LOT! What a really cool way to manage the state of your React app.&lt;/p&gt;
 
-&lt;p&gt;Nowadays, thanks to big improvements in web technologies, by using a performant fullstack like &lt;a href=&quot;http://mean.io&quot;&gt;MEAN.io&lt;/a&gt; or &lt;a href=&quot;http://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt; and a GIT based host like &lt;a href=&quot;http://heroku.com/&quot;&gt;Heroku&lt;/a&gt; you can deploy your app using only 1 command line like this one for Heroku: &lt;code&gt;git push heroku master&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;get-started&quot;&gt;Get started&lt;/h3&gt;
 
-&lt;p&gt;That’s magic, really efficient, good for your nerves and your brain and also AFFORDABLE!&lt;/p&gt;
+&lt;p&gt;First if like me you are not used to Flux and even less to Redux, you should check these &lt;a href=&quot;https://egghead.io/series/getting-started-with-redux&quot;&gt;cool tutorial videos&lt;/a&gt; made by the creator of Redux. It will give you some really useful basics and help you to understand how Redux works.&lt;/p&gt;
 
-&lt;p&gt;Indeed, Heroku offers a free starter option which allows you to play a bit with their backoffice and see how it works. This offer (1 free dyno) is perfect for small apps or low traffic websites and once again, is completely free. So what are the cons? After the potential lack of power for high traffic website, the main one is that if you have only the free dyno, this one will go asleep after 1 hour of non activity on your app. Pretty bad and to get out of its idling state on the next loading, it can take sometimes more than 7 seconds!&lt;/p&gt;
+&lt;h3 id=&quot;starter-kit&quot;&gt;Starter kit&lt;/h3&gt;
 
-&lt;h3 id=&quot;whats-the-trick&quot;&gt;What’s the trick?&lt;/h3&gt;
+&lt;p&gt;Then, it’s time to get started and write some code.&lt;/p&gt;
 
-&lt;p&gt;Thanks god there is really easy and free work around to avoid your dyno to go into his sleep mode. This is called “Monitoring”. Basically, monotoring your app will call it every X minutes to check if your server is still up and will record response time and many other data.&lt;/p&gt;
+&lt;p&gt;And here come the &lt;a href=&quot;https://github.com/rackt/redux/tree/master/examples&quot;&gt;examples&lt;/a&gt; from Redux git repo. Clearly, they are really amazing and you can totally use them as a base for your first small project in Redux.&lt;/p&gt;
 
-&lt;p&gt;One good free monitoring service is &lt;a href=&quot;http://uptimerobot.com/&quot;&gt;UptimeRobot&lt;/a&gt;. It’s currently pinging my heroku server every 45mins and keeping my response time under 200ms. By calling my server every 45mins I prevent it idling and keep it efficient/awake for the next “real” call.
-As I was saying in this &lt;a href=&quot;http://vincentaudebert.github.io/frameworks/node/angular/nosql/2014/09/26/mean-io-it-is-mean/&quot;&gt;previous post&lt;/a&gt; (cf Bonus point #2), Heroku has a great response time.&lt;/p&gt;
+&lt;h3 id=&quot;springtunes&quot;&gt;Springtunes&lt;/h3&gt;
 
-&lt;h3 id=&quot;what-about-the-database&quot;&gt;What about the database?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/springload/springtunes/raw/master/screenshots/sc_springtunes.png?raw=true&quot; alt=&quot;Springtunes screenshot&quot; title=&quot;Springtunes screenshot&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Once you’ve solved this idling problem, you will face some other small problems like finding a free Heroku add-on for your database.
-By default Heroku includes a &lt;a href=&quot;https://addons.heroku.com/heroku-postgresql&quot;&gt;Postgres SQL database&lt;/a&gt; which is free for less than 10 000 rows which should be enough for small apps.&lt;/p&gt;
+&lt;p&gt;That’s what I did and I ended up creating &lt;a href=&quot;https://www.npmjs.com/package/springtunes&quot;&gt;Springtunes&lt;/a&gt;. A small web app that allows you to control your spotify client from any web browser.&lt;/p&gt;
 
-&lt;p&gt;What I recommend is just switching to &lt;a href=&quot;http://mean.io&quot;&gt;MEAN.io&lt;/a&gt; and install the database add-on &lt;a href=&quot;https://addons.heroku.com/mongolab#sandbox&quot;&gt;MongoLab&lt;/a&gt; which is free under 500MB.&lt;/p&gt;
+&lt;p&gt;It’s running an express server on port 3000 and then through the UI, triggers actions to the actual Spotify client.&lt;/p&gt;
 
-&lt;p&gt;You will work only using Javascript and MEAN is a really powerful project starter for small apps. And Heroku accepts node.js apps so no excuses! :)&lt;/p&gt;
+&lt;p&gt;All the client side is made using React and Redux. Don’t hesitate to have a look at the source code but it’s mostly based on the ‘async’ example from Redux repo.&lt;/p&gt;
 
-&lt;h3 id=&quot;bonus-service-that-i-really-like&quot;&gt;Bonus service that I really like&lt;/h3&gt;
+&lt;h3 id=&quot;afterwards&quot;&gt;Afterwards&lt;/h3&gt;
 
-&lt;p&gt;If you want to upload files really easily, Heroku recommends using Amazon S3. Of course, it depends of your needs but I highly recommend &lt;a href=&quot;https://addons.heroku.com/filepicker&quot;&gt;FilePicker.io&lt;/a&gt; which is another free add-on if you upload less than 500 files / month and your files are lighter than 20MB. They provide all the file upload system to S3 + the UI and just return a URL and file properties. Ready to use and provides you data to store in your MongoDB or to use directly in your app!&lt;/p&gt;
+&lt;p&gt;That’s the crazy thing… Everything is so clear and well explained in the &lt;a href=&quot;https://egghead.io/series/getting-started-with-redux&quot;&gt;videos&lt;/a&gt;/&lt;a href=&quot;https://github.com/rackt/redux/tree/master/examples&quot;&gt;examples&lt;/a&gt;/&lt;a href=&quot;http://redux.js.org/&quot;&gt;documentation&lt;/a&gt; that you don’t need anything else to get started and nail Redux.&lt;/p&gt;
+
+&lt;p&gt;Enjoy Redux, it looks complex at the beginning but it’s a lot of fun at the end :)&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 04 Oct 2014 04:31:19 +1300</pubDate>
-        <link>http://vincentaudebert.github.io/heroku/free/hosting/2014/10/04/small-app-on-heroku-for-free/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/heroku/free/hosting/2014/10/04/small-app-on-heroku-for-free/</guid>
+        <pubDate>Tue, 02 Feb 2016 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/javascript/react/2016/02/02/spotify-springtunes-redux-copy/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/javascript/react/2016/02/02/spotify-springtunes-redux-copy/</guid>
       </item>
     
       <item>
-        <title>MEAN.io... it&#39;s mean!</title>
-        <description>&lt;p&gt;Busy busy busy!&lt;/p&gt;
+        <title>Let&#39;s talk a bit about SEO</title>
+        <description>&lt;p&gt;First of all, this is the first blog of the year 2016!&lt;/p&gt;
 
-&lt;p&gt;For the last few weeks, I’ve been really busy between my job and a personal project.&lt;/p&gt;
+&lt;p&gt;Happy new year everyone! I hope you had a good break for xmas and new year.&lt;/p&gt;
 
-&lt;p&gt;This personal project was really interesting as I discovered a awesome new project starter called &lt;strong&gt;MEAN.io&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now, let’s get back to work and talk a bit about SEO.
+I have another big thanks for all of you who are visiting my blog. Recently I reached the milestone of 500 visitors on the last month. I must say it’s good for motivation!&lt;/p&gt;
 
-&lt;p&gt;MEAN stands for MongoDB Express.js AngularJS Node.js&lt;/p&gt;
+&lt;p&gt;Noticing an increase in my audience, I’ve been checking quite often my most popular articles and the keywords used to access to them.&lt;/p&gt;
 
-&lt;p&gt;From these technologies I knew only AngularJS and what I can say is that it’s amazingly powerful! I would say MEAN represents a really easy and quick way to start and realize a small project. As it’s based on MongoDB, the NoSQL database might be too limited for really big projects but I would highly recommend it for small presentation websites or easy CRUD data management.&lt;/p&gt;
+&lt;p&gt;Here are few easy and very general tips about SEO.&lt;/p&gt;
 
-&lt;p&gt;To get started quickly, first have a look at the official website: &lt;a href=&quot;http://mean.io&quot;&gt;http://mean.io&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;mobile-version&quot;&gt;Mobile version&lt;/h3&gt;
 
-&lt;p&gt;You will need npm, Grunt, Bower and all these packages you should already have installed anyway if you are an angular user.&lt;/p&gt;
+&lt;p&gt;As you might know, Google pays now a lot of attention to see if your website is responsive or not. By responsive, they mean nicely display on mobile.&lt;/p&gt;
 
-&lt;p&gt;And then let’s get your mind blowed away:&lt;/p&gt;
+&lt;p&gt;If your website isn’t, it’s more likely that you end up being deindexed or at least not showing up in the top results (let’s call it “deranked”).&lt;/p&gt;
 
-&lt;p&gt;First to setup all your app, execute this in your terminal:&lt;/p&gt;
+&lt;h3 id=&quot;keywords&quot;&gt;Keywords&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;meanio&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@latest&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmdline&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myApp&lt;/span&gt;                    &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myApp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;            &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grunt&lt;/span&gt;                              &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Launch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Well another one which is probably the hardest one. Keywords.
+My top 2 articles are &lt;a href=&quot;http://vincentaudebert.github.io/angular/javascript/form/2015/01/29/angularjs-prevent-button-submit-form/&quot;&gt;this one about how to prevent a form submit with AngularJS&lt;/a&gt; and &lt;a href=&quot;http://vincentaudebert.github.io/angular/javascript/select/2014/11/11/angularjs-select-has-empty-value/&quot;&gt;this one about why am I getting an empty value in my select tag, still with AngularJS&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Note that you can also run &lt;code&gt;node server&lt;/code&gt; instead of &lt;code&gt;grunt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;These two articles are fairly simple but generate a lot of traffic with searches like “angular prevent form submit” or “angularjs select default value”. I’m actually on the first page for these searches.&lt;/p&gt;
 
-&lt;p&gt;After this have a look to the &lt;a href=&quot;http://mean.io/#!/docs&quot;&gt;documentation&lt;/a&gt; and explore the folder called “articles” inside your “packages” one. It will give you an idea of a basic CRUD system. And then yes… it’s as easy as this!&lt;/p&gt;
+&lt;p&gt;So based on these pages, I would say that it’s important to always specify what you are talking about inside your article. Like for this article, it’s all about SEO (Search Engine Optimisation). And then don’t hesitate to use other keywords like “Search Engines” or “Google Robots” which might be used by some users but still relate to your topic.
+I know it sounds stupid, but sometimes you can write lines and lines of text without mentionning the main purpose of this text.&lt;/p&gt;
 
-&lt;p&gt;I would say that the most complicated thing I faced on my small project was probably to use/get foreign keys with mongoose but that really well documented &lt;a href=&quot;http://mongoosejs.com/docs/populate.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;external-links&quot;&gt;External links&lt;/h3&gt;
 
-&lt;p&gt;Other good thing, maybe not for everybody, is that you will write only Javascript as all these technologies are using Javascript. You won’t put anymore &lt;code&gt;;&lt;/code&gt; in your python code when you just switch from Javascript front end! YAY!&lt;/p&gt;
+&lt;p&gt;If you can, try to always add &lt;a href=&quot;https://moz.com/learn/seo/external-link&quot;&gt;some external links&lt;/a&gt;. The web is made of connections between websites. Don’t keep your sources for you, share them.&lt;/p&gt;
 
-&lt;h3 id=&quot;bonus-point&quot;&gt;Bonus point&lt;/h3&gt;
-&lt;p&gt;Big bonus point for mean is that you can easily deploy your app on &lt;a href=&quot;http://heroku.com&quot;&gt;Heroku&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have read a long time ago that Google would be more inclined to top result a page with external links than one with no links or only internal links.&lt;/p&gt;
 
-&lt;p&gt;Behind its complicated terms, Heroku is a powerful web host and you will be able to deploy your app online by using this magic command line: &lt;/p&gt;
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;git push heroku master&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Last but not least, check your SEO tools everyday or so. Of course there is the world famous &lt;a href=&quot;http://www.google.com/analytics/&quot;&gt;Google Analytics&lt;/a&gt; to check your traffic, etc., but I highly recommend to use the &lt;a href=&quot;https://www.google.com/webmasters/tools&quot;&gt;“Google webmaster tools”&lt;/a&gt; in completion of it. So you can get to know which keywords/articles are a success. How often/Where do you show up in Google results, etc.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Yes, everything is as easy as this!&lt;/strong&gt; and that’s the magic about the combo Mean+Heroku!&lt;/p&gt;
+&lt;h3 id=&quot;host-on-a-famous-domain&quot;&gt;Host on a famous domain&lt;/h3&gt;
 
-&lt;h3 id=&quot;bonus-point-2&quot;&gt;Bonus point #2&lt;/h3&gt;
-&lt;p&gt;I will post a new article soon about using Heroku for your devs/small projects but I was using a monitoring system on my app and noticed that before switching to MEAN, I was using a standard RoR app and my loading time was between 150/200ms. With MEAN it’s only between 80/150ms.&lt;/p&gt;
+&lt;p&gt;I’ve read a few months ago that Google might “boost” you if your blog is hosted on a famous domain. As I said earlier, it takes time to get Google trust and it might be easier if your blog is using a subdomain of &lt;a href=&quot;https://wordpress.com&quot;&gt;wordpress.com&lt;/a&gt; or like mine, &lt;a href=&quot;https://pages.github.com/&quot;&gt;github.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;keep-your-blog-active&quot;&gt;Keep your blog active&lt;/h3&gt;
+
+&lt;p&gt;Also I noticed, it’s important to keep some activity on your blog. And the more popular you get, the more Google trusts you and is likely to “top result” you.&lt;/p&gt;
+
+&lt;p&gt;At the beginning of your blog, I would suggest to post at least every two weeks. Then once, you start to get few visitors, you can like I do, switch to a more relaxed pace. I try to post every month. It’s good to keep the Google bots visiting your site.&lt;/p&gt;
+
+&lt;p&gt;Don’t hesitate to post your &lt;a href=&quot;https://en.wikipedia.org/wiki/Sitemaps&quot;&gt;sitemap.xml&lt;/a&gt; on Google webmaster tools after you just updated it.
+Yes, sitemaps are really important. But nowadays, most of the blogging systems populate one automatically.&lt;/p&gt;
+
+&lt;p&gt;Good luck with your blog/website. SEO is hard work and it takes quite a long time to take effect. NEVER GIVE UP! :)&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 27 Sep 2014 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/frameworks/node/angular/nosql/2014/09/27/mean-io-it-is-mean/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/frameworks/node/angular/nosql/2014/09/27/mean-io-it-is-mean/</guid>
+        <pubDate>Sat, 09 Jan 2016 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/seo/tips/2016/01/09/seo-blog/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/seo/tips/2016/01/09/seo-blog/</guid>
       </item>
     
       <item>
-        <title>How to test properly a string var in Javascript?</title>
-        <description>&lt;p&gt;Sometimes it’s good to remind the basics.&lt;/p&gt;
+        <title>How to create a React component with ES6</title>
+        <description>&lt;p&gt;Let’s keep going with ReactJS. Must say I’m getting addicted :)&lt;/p&gt;
 
-&lt;p&gt;Today, I was trying to test if a &lt;code&gt;Date&lt;/code&gt; object that I made becoming a string using &lt;code&gt;toISOString()&lt;/code&gt; was a string.&lt;/p&gt;
+&lt;p&gt;Recently I started a small project and I wanted to use ReactJS and ES6 (&lt;a href=&quot;http://www.ecma-international.org/ecma-262/6.0/&quot;&gt;EcmaScript 2015 6th Edition&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;And I immediately thought about &lt;code&gt;if(date instanceof String)&lt;/code&gt; but this was always &lt;code&gt;false&lt;/code&gt;…&lt;/p&gt;
+&lt;p&gt;Turned out that creating a component is a little bit different.
+Let me show you a commented skeleton for a component in ES6:&lt;/p&gt;
 
-&lt;p&gt;And then I found this post: &lt;a href=&quot;http://stackoverflow.com/a/21605936&quot;&gt;http://stackoverflow.com/a/21605936&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//Your component inherits from React.Component&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//In ES6, getInitialState() is gone&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//You need to use the constructor and init your property &#39;state&#39; inside&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;tick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;Clicks&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//propTypes and defaultProps are now declared as properties on the constructor instead of directly inside the class body.&lt;/span&gt;
 
-&lt;p&gt;It was painful to see how sometimes you forget that Javascript can be crap and you need a basic reminder.&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;//This is how you declare the props for your component&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;propTypes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;initialCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//And how you give them a default value&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;defaultProps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;initialCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;I created &lt;strong&gt;&lt;a href=&quot;http://jsfiddle.net/vatweb/Lcw7fz88/&quot;&gt;a little JSFiddle&lt;/a&gt;&lt;/strong&gt; to show exactly what I wanted to do and to make obvious the difference between literals and objects.
-But you can also see the code just here:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toISOString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//false&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//false&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//Recommendation&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//For more security keep testing the two ways&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateStrObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Finally, another link you might find useful on the Literals Vs Objects topic: &lt;a href=&quot;http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals&quot;&gt;http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This example comes directly &lt;a href=&quot;https://facebook.github.io/react/docs/reusable-components.html#es6-classes&quot;&gt;from the official ReactJS documentation&lt;/a&gt; that I highly recommend.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 11 Sep 2014 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/javascript/string/2014/09/11/javascript-test-string-date/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/javascript/string/2014/09/11/javascript-test-string-date/</guid>
+        <pubDate>Wed, 02 Dec 2015 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/javascript/react/2015/12/02/react-component-es6/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/javascript/react/2015/12/02/react-component-es6/</guid>
       </item>
     
       <item>
-        <title>Contact form with no server side</title>
-        <description>&lt;p&gt;While I was redesigning my personal website &lt;a href=&quot;http://vatweb.fr&quot;&gt;vatweb.fr&lt;/a&gt;, I really didn’t want to have a server side involved just to send a basic contact form…&lt;/p&gt;
+        <title>Publish demo of your React component on GitHub</title>
+        <description>&lt;p&gt;Just started at my new job! Exciting!&lt;/p&gt;
 
-&lt;p&gt;After a bit of Googling, I could not find anything better than &lt;a href=&quot;http://wufoo.com&quot;&gt;Wufoo&lt;/a&gt;… Not optimal but it would have done the job.&lt;/p&gt;
+&lt;p&gt;And my first mission was to deal with this &lt;a href=&quot;https://github.com/springload/react-svg-icon&quot;&gt;React component&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;However, as you might have seen, I change my blog theme too to use &lt;a href=&quot;http://pixyll.com/&quot;&gt;Pixyll jekyll theme&lt;/a&gt;. While I was looking inside the source code, I ended up finding &lt;a href=&quot;http://forms.brace.io/&quot;&gt;Brace.io&lt;/a&gt; in the &lt;code&gt;action&lt;/code&gt; attribute of a form. Curious, I had a look and found out that Forms Brace.io allows you really easily to send a form content to your email address. Ideal for a contact form!&lt;/p&gt;
+&lt;p&gt;We wanted to have a nice demo page on a github page for this component.&lt;/p&gt;
 
-&lt;p&gt;You can have a demo directly on this blog as it’s using it for &lt;a href=&quot;http://vincentaudebert.github.io/contact/&quot;&gt;the contact form&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Something &lt;a href=&quot;https://springload.github.io/react-svg-icon/&quot;&gt;like this&lt;/a&gt;…&lt;/p&gt;
 
-&lt;p&gt;And here come the really easy HTML piece of code to build a Brace form:&lt;/p&gt;
+&lt;p&gt;And it was actually fairly easy. Just had to use &lt;a href=&quot;https://github.com/mzabriskie/rackt-cli&quot;&gt;rackt-cli&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://forms.brace.io/you@youremail.com&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;email&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Email Address&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;textarea&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rows=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;5&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;What would you like to say?&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/textarea&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Say Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once rackt-cli is installed (using &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g rackt-cli&lt;/code&gt;), create a folder &lt;code class=&quot;highlighter-rouge&quot;&gt;examples&lt;/code&gt; at the root of your project and then everything inside this folder will be taken to a github page for your project using the command &lt;code class=&quot;highlighter-rouge&quot;&gt;rackt pages&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Of course feel free to add some bootstrap classes and/or angularJS form validation :)&lt;/p&gt;
+&lt;p&gt;Easy right?&lt;/p&gt;
+
+&lt;p&gt;In my case, I copied a github page theme (index.html + javascripts folder + stylesheets folder) and then modified the index to list my different demos (basic folder + multiple folder). You can see the structure &lt;a href=&quot;https://github.com/springload/react-svg-icon/tree/master/examples&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;N.B.: rackt-cli can also be used to &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; your react component and you can preview your demo using &lt;code class=&quot;highlighter-rouge&quot;&gt;rackt server&lt;/code&gt; and… much more! Just check &lt;a href=&quot;https://github.com/mzabriskie/rackt-cli&quot;&gt;the documentation&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 04 Sep 2014 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/html/form/2014/09/04/brace-io-contact-form-no-server-side/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/html/form/2014/09/04/brace-io-contact-form-no-server-side/</guid>
+        <pubDate>Thu, 05 Nov 2015 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/javascript/react/2015/11/05/publish-demo-react-component/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/javascript/react/2015/11/05/publish-demo-react-component/</guid>
       </item>
     
       <item>
-        <title>Angular UI Bootstrap Tabset and subtabs</title>
-        <description>&lt;p&gt;Few problems solved in this post. &lt;/p&gt;
+        <title>Python SQLAlchemy cascade delete</title>
+        <description>&lt;p&gt;Quick tip if you get in trouble with a foreign key dependency even if you have specified a cascade delete in your models.&lt;/p&gt;
 
-&lt;p&gt;After a long investigation I found quite not clear and not documented how to use &lt;strong&gt;Angular UI Bootstrap tabsets&lt;/strong&gt;.
-I was basically trying to have a range of &lt;strong&gt;tabs/subtabs&lt;/strong&gt; and just &lt;strong&gt;activating&lt;/strong&gt; them using &lt;code&gt;active&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;p&gt;Using SQLAlchemy, to specify a cascade delete you should have &lt;code class=&quot;highlighter-rouge&quot;&gt;cascade=&#39;all, delete&#39;&lt;/code&gt; on your parent table.
+Ok but then when you execute something like:&lt;/p&gt;
 
-&lt;h3 id=&quot;first-issue&quot;&gt;First issue&lt;/h3&gt;
-&lt;p&gt;More precisely, this issue: &lt;a href=&quot;https://github.com/angular-ui/bootstrap/issues/611&quot;&gt;https://github.com/angular-ui/bootstrap/issues/611&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourmodule&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;YourParentTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conditions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;According to this github issue, it’s not possible to use any expression/function evaluation in &lt;code&gt;active&lt;/code&gt; attribute. You have to use a boolean var.&lt;/p&gt;
+&lt;p&gt;It actually triggers an error about a foreign key used in your children tables.&lt;/p&gt;
 
-&lt;p&gt;That’s the reason why I created an array to manage each tabs.&lt;/p&gt;
+&lt;p&gt;The solution I used it to query the object and then delete it:&lt;/p&gt;
 
-&lt;h3 id=&quot;second-problem&quot;&gt;Second problem&lt;/h3&gt;
-&lt;p&gt;How to activate parent tabs when clicking on a child tab?&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DBSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;your_db_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourmodule&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;YourParentTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conditions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your_db_object&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;your_db_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;To manage this I use the function &lt;code&gt;includes()&lt;/code&gt; (&lt;a href=&quot;https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stateincludesstatename--params&quot;&gt;Documentation&lt;/a&gt;) of &lt;code&gt;$state&lt;/code&gt; and I use dot-separated names for my routes like “foo.bar”. Thanks to this I can look for “foo” to activate the parent tab and “foo.bar” for the child tab.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;You will find a basic 3-level tab example on this JSFiddle: &lt;a href=&quot;http://jsfiddle.net/wy8j75r8/3/&quot;&gt;http://jsfiddle.net/wy8j75r8/3/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is another link I used to give me an idea about expression evaluation in &lt;code&gt;active&lt;/code&gt;: &lt;a href=&quot;http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview&quot;&gt;http://plnkr.co/edit/F57uuiiqAbQ92QWfkYp8?p=preview&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;This should delete your parent record AND all the children associated with it.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 30 Aug 2014 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/angularjs/tabset/2014/08/30/angular-ui-bootstrap-tabset-activation-subtab/</guid>
+        <pubDate>Sat, 10 Oct 2015 04:31:19 +1300</pubDate>
+        <link>http://vincentaudebert.github.io/python/sql/2015/10/10/cascade-delete-sqlalchemy/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/python/sql/2015/10/10/cascade-delete-sqlalchemy/</guid>
       </item>
     
       <item>
-        <title>AngularJS 1.2 - checkAll/uncheckAll</title>
-        <description>&lt;p&gt;It has been a while I didn’t post. Sorry, I got busy with my new job.&lt;/p&gt;
+        <title>AngularJS $http error callback not executed</title>
+        <description>&lt;p&gt;Just found a solution to my problem and thought it would be a good idea to share it.
+Few days ago we changed our structure and we are now using factories to call our API and return promises.&lt;/p&gt;
 
-&lt;p&gt;Thanks to this new job, I had to learn AngularJS. I must say I’m really surprised and happy about it!&lt;/p&gt;
+&lt;p&gt;Unfortunately, we realized that since we made this change our &lt;code class=&quot;highlighter-rouge&quot;&gt;error&lt;/code&gt; callbacks were not executed anymore.&lt;/p&gt;
 
-&lt;p&gt;It’s for this same job that I had to do a checkAll/uncheckAll functionnality. I found this page: &lt;a href=&quot;http://dotnetpanda.blogspot.co.nz/2013/12/lets-do-check-all-and-uncheck-all.html&quot;&gt;http://dotnetpanda.blogspot.co.nz/2013/12/lets-do-check-all-and-uncheck-all.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I first thought the problem was linked somehow to the server return as we changed the way we handle exceptions. But it was not.&lt;/p&gt;
 
-&lt;p&gt;I tried to apply it but it wasn’t working for me…&lt;/p&gt;
+&lt;p&gt;The real weird thing was that we were always going into the &lt;code class=&quot;highlighter-rouge&quot;&gt;success&lt;/code&gt; callback and never into the &lt;code class=&quot;highlighter-rouge&quot;&gt;error&lt;/code&gt; one even with an error 500 or 404 or whatever…&lt;/p&gt;
 
-&lt;p&gt;Found out that it’s because this version is only compatible with AngularJS 1.1 but once you are on AngularJS 1.2 and above it doesn’t work.&lt;/p&gt;
+&lt;p&gt;So I googled it (quite a lot) and then found this brilliant &lt;a href=&quot;http://stackoverflow.com/questions/15888162/angularjs-http-error-function-never-called&quot;&gt;stackoverflow answer&lt;/a&gt; which gives the right answer (for me) on the second answer.&lt;/p&gt;
 
-&lt;p&gt;You can find my version, compatible with AngularJS 1.2 (but not with prior versions which is… weird…) on this JSfiddle: &lt;a href=&quot;http://jsfiddle.net/vatweb/g1Lem3Lw/&quot;&gt;http://jsfiddle.net/vatweb/g1Lem3Lw/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here was my problem. I was intercepting the errors like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$httpProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;interceptors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$injector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;responseError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;403&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;growl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Access denied&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;401&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;But as it says on SO answer it should have been:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$httpProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;interceptors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$injector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;responseError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;403&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;growl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Access denied&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;401&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rejection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Indeed in case your promise gets rejected, you need to return it otherwise Angular thinks that everything is fine and go through the &lt;code class=&quot;highlighter-rouge&quot;&gt;success&lt;/code&gt; callback!&lt;/p&gt;
+
+&lt;p&gt;Hope this helps!&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 22 Aug 2014 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/angularjs/checkall/2014/08/22/angularjs-1-2-checkall-uncheckall/</guid>
+        <pubDate>Fri, 04 Sep 2015 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/angularjs/http/callback/2015/09/04/error-callback-not-executed/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/angularjs/http/callback/2015/09/04/error-callback-not-executed/</guid>
       </item>
     
       <item>
-        <title>Iframe &amp; Windows 8.1 metro app</title>
-        <description>&lt;p&gt;Let’s start this blog with the problem which gave me the idea of starting it.&lt;/p&gt;
+        <title>OneAll - Polymer element</title>
+        <description>&lt;p&gt;Recently I was looking for a service that could provide a user authentication based on social networks.
+I ended on &lt;a href=&quot;http://www.oneall.com&quot;&gt;oneall.com&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;I’m a web developer currently working for a startup called &lt;a href=&quot;http://www.showcaseworkshop.com&quot;&gt;Showcase Workshop&lt;/a&gt;. While I was programming for our Windows 8 app I faced a problem when I needed to integrate HTML page in an iframe.&lt;/p&gt;
+&lt;p&gt;After having a look at the documentation I decided to build a polymer element for this service.&lt;/p&gt;
 
-&lt;p&gt;Basically, I had a HTML page coming for my local cache (&lt;code&gt;ms-appdata&lt;/code&gt;) and I could not load it in an &lt;code&gt;iframe&lt;/code&gt; using something like this:&lt;/p&gt;
+&lt;p&gt;A month ago, I released v1.0 but this version did not include premium methods.
+Here comes &lt;a href=&quot;https://github.com/vincentaudebert/polymer-oneall-social-login/tree/v1.1.0&quot;&gt;v1.1&lt;/a&gt; that now supports all the methods provided by OneAll.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;&amp;lt;iframe src=”ms-appdata:///local/index.html”&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Feel free to participate to this repo.&lt;/p&gt;
 
-&lt;p&gt;I was getting a blank iframe. Then I tried with a web context iframe:&lt;/p&gt;
+&lt;p&gt;To give you a preview, this is what you need to display this service on your website:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;&amp;lt;iframe src=”ms-appx-web:///local/index.html”&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;oneall-social-login&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oneall-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Login here&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; [if you use attachPopupUi]
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;oneall-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Login here&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt; [if you use doRenderUi]
+  [leave empty if you use doPopupUi]
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/oneall-social-login&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Unfortunately, &lt;code&gt;ms-appx-web&lt;/code&gt; can’t access to a local resource but only to resources in the app package. So I was getting a black iframe…&lt;/p&gt;
-
-&lt;p&gt;After a bit of googling I found this page: &lt;a href=&quot;http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx&quot;&gt;http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Finally, I made it work with:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;x-ms-webview src=”ms-appdata:///local/index.html”&amp;gt;&amp;lt;/x-ms-webview&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find &lt;code&gt;x-ms-webview&lt;/code&gt; documentation here: &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx&quot;&gt;http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;N.B.: You might want to add this tag directly with jQuery but then you will get the famous security exception:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;0x800c001c — JavaScript runtime error:
-Unable to add dynamic content. A
-script attempted to inject dynamic
-content, or elements previously
-modified dynamically, that might be
-unsafe. For example, using the
-innerHTML property to add script or
-malformed HTML will generate this
-exception. Use the toStaticHTML method
-to filter dynamic content, or
-explicitly create elements and
-attributes with a method such as
-createElement. For more information,
-see
-&lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkID=247104&quot;&gt;http://go.microsoft.com/fwlink/?LinkID=247104&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I recommend to put &lt;code&gt;x-ms-webview&lt;/code&gt; in hard in your HTML code with &lt;code&gt;display:none;&lt;/code&gt; and then dynamically set the right &lt;code&gt;src&lt;/code&gt; and display it when needed.&lt;/p&gt;
+&lt;p&gt;You can find more examples in the &lt;code class=&quot;highlighter-rouge&quot;&gt;demo&lt;/code&gt; folder on github.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 17 Jul 2014 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/windows/app/2014/07/17/iframe-windows-8-1-metro-app/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/windows/app/2014/07/17/iframe-windows-8-1-metro-app/</guid>
+        <pubDate>Sat, 08 Aug 2015 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/polymer/element/2015/08/08/polymer-element-oneall/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/polymer/element/2015/08/08/polymer-element-oneall/</guid>
+      </item>
+    
+      <item>
+        <title>Twitter Bootstrap 3 - Change your navbar colors</title>
+        <description>&lt;p&gt;Really quick article about a cool tool.&lt;/p&gt;
+
+&lt;p&gt;Few weeks ago I had to change my navbar colors and could not be bothered going through all the CSS files to modify all the colors etc…&lt;/p&gt;
+
+&lt;p&gt;I found &lt;a href=&quot;http://twitterbootstrap3navbars.w3masters.nl/?color=%234066b9&amp;amp;linkcolor=%23fff&amp;amp;activelinkcolor=%23f6f6f6&amp;amp;gradient=0&amp;amp;gradient=1&amp;amp;borders=0&quot;&gt;this awesome and really simple website&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Just select your colors and then it will generate all the CSS classes you need to implement to modify your colors.
+You need to add the generated CSS to your CSS file and then apply &lt;code class=&quot;highlighter-rouge&quot;&gt;navbar-custom&lt;/code&gt; class to your navbar and colors will change as you set it up!&lt;/p&gt;
+
+&lt;p&gt;Hope this helps!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 29 Jul 2015 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/css/color/generator/2015/07/29/twitter-bootstrap-change-color-navbar/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/css/color/generator/2015/07/29/twitter-bootstrap-change-color-navbar/</guid>
+      </item>
+    
+      <item>
+        <title>Google Picker dialog behind bootstrap modal</title>
+        <description>&lt;p&gt;Another article talking about Google API and it’s awesome Google Picker which allows you to pick files from your Google Drive.&lt;/p&gt;
+
+&lt;p&gt;I tried to display it on top of a modal on my screen and I could not see the Google Picker dialog showing up.
+It was simply hidden behind the modal.&lt;/p&gt;
+
+&lt;p&gt;And here comes &lt;code class=&quot;highlighter-rouge&quot;&gt;z-index&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Using jQuery, the best solution is to change on the fly &lt;code class=&quot;highlighter-rouge&quot;&gt;z-index&lt;/code&gt; property for class &lt;code class=&quot;highlighter-rouge&quot;&gt;.picker-dialog&lt;/code&gt;.
+Use a &lt;code class=&quot;highlighter-rouge&quot;&gt;z-index&lt;/code&gt; &amp;gt; 1050 or the value of your modal one.&lt;/p&gt;
+
+&lt;p&gt;Here is the code I use.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;.picker-dialog&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;z-index&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Hope this helps!&lt;/p&gt;
+
+&lt;p&gt;Article inspired by &lt;a href=&quot;https://github.com/softmonkeyjapan/angular-google-picker/issues/4&quot;&gt;this github issue&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 27 Jun 2015 03:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/google/picker/dialog/css/2015/06/27/google-picker-dialog-z-index/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/google/picker/dialog/css/2015/06/27/google-picker-dialog-z-index/</guid>
       </item>
     
   </channel>

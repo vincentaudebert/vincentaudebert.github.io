@@ -2,6 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://vincentaudebert.github.io/javascript/react/2016/02/24/remove-hash-react-browsersync/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/javascript/react/2016/02/02/spotify-springtunes-redux-copy/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/seo/tips/2016/01/09/seo-blog/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/javascript/react/2015/12/02/react-component-es6/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/javascript/react/2015/11/05/publish-demo-react-component/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/python/sql/2015/10/10/cascade-delete-sqlalchemy/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/angularjs/http/callback/2015/09/04/error-callback-not-executed/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/polymer/element/2015/08/08/polymer-element-oneall/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/css/color/generator/2015/07/29/twitter-bootstrap-change-color-navbar/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/google/picker/dialog/css/2015/06/27/google-picker-dialog-z-index/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/google/drive/api/download/2015/05/20/google-drive-api-download-file/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/html/tag/caption/2015/04/18/html-caption-table-title/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/angular/accordion/datepicker/2015/04/14/angularjs-datetimepicker-accordion/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/angular/javascript/scope/2015/02/28/angularjs-scope-propagation/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/angular/javascript/form/2015/01/30/angularjs-prevent-button-submit-form/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/angular/javascript/select/2015/01/22/angularjs-select-does-not-work/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/angular/javascript/select/2014/11/12/angularjs-select-has-empty-value/</loc>
+    </url>
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/python/aws/celery/2014/10/22/parallelisation-using-pyramid-and-celery/</loc>
+    </url>
+    
+    <url>
         <loc>http://vincentaudebert.github.io/html/meta/share/2014/10/11/meta-tags-facebook-twitter-google/</loc>
     </url>
     
@@ -73,8 +145,42 @@
     
     
     
+    
+    
     <url>
         <loc>http://vincentaudebert.github.io/page2/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/page3/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/page4/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/page5/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>http://vincentaudebert.github.io/page6/</loc>
     </url>
     
     

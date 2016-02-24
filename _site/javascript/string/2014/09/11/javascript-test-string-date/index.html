@@ -71,9 +71,9 @@
 <article class="post-content">
   <p>Sometimes it’s good to remind the basics.</p>
 
-<p>Today, I was trying to test if a <code>Date</code> object that I made becoming a string using <code>toISOString()</code> was a string.</p>
+<p>Today, I was trying to test if a <code class="highlighter-rouge">Date</code> object that I made becoming a string using <code class="highlighter-rouge">toISOString()</code> was a string.</p>
 
-<p>And I immediately thought about <code>if(date instanceof String)</code> but this was always <code>false</code>…</p>
+<p>And I immediately thought about <code class="highlighter-rouge">if(date instanceof String)</code> but this was always <code class="highlighter-rouge">false</code>…</p>
 
 <p>And then I found this post: <a href="http://stackoverflow.com/a/21605936">http://stackoverflow.com/a/21605936</a></p>
 
@@ -82,21 +82,21 @@
 <p>I created <strong><a href="http://jsfiddle.net/vatweb/Lcw7fz88/">a little JSFiddle</a></strong> to show exactly what I wanted to do and to make obvious the difference between literals and objects.
 But you can also see the code just here:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">dateStr</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">();</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dateStr</span> <span class="k">instanceof</span> <span class="nb">String</span><span class="p">);</span> <span class="c1">//false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">dateStr</span> <span class="o">===</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span> <span class="c1">//true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">dateStr</span> <span class="o">===</span> <span class="s2">"string"</span><span class="p">);</span> <span class="c1">//true</span>
 
 <span class="kd">var</span> <span class="nx">dateStrObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="nx">dateStr</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dateStrObj</span> <span class="k">instanceof</span> <span class="nb">String</span><span class="p">);</span> <span class="c1">//true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">dateStrObj</span> <span class="o">===</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span> <span class="c1">//false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">dateStrObj</span> <span class="o">===</span> <span class="s2">"string"</span><span class="p">);</span> <span class="c1">//false</span>
 
 <span class="c1">//Recommendation</span>
 <span class="c1">//For more security keep testing the two ways</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dateStr</span> <span class="k">instanceof</span> <span class="nb">String</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">dateStr</span> <span class="o">===</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span> <span class="c1">//true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dateStrObj</span> <span class="k">instanceof</span> <span class="nb">String</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">dateStrObj</span> <span class="o">===</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span> <span class="c1">//true</span></code></pre></div>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dateStr</span> <span class="k">instanceof</span> <span class="nb">String</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">dateStr</span> <span class="o">===</span> <span class="s2">"string"</span><span class="p">);</span> <span class="c1">//true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dateStrObj</span> <span class="k">instanceof</span> <span class="nb">String</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">dateStrObj</span> <span class="o">===</span> <span class="s2">"string"</span><span class="p">);</span> <span class="c1">//true</span></code></pre></figure>
 
 <p>Finally, another link you might find useful on the Literals Vs Objects topic: <a href="http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals">http://stackoverflow.com/questions/203739/why-does-instanceof-return-false-for-some-literals</a></p>
 

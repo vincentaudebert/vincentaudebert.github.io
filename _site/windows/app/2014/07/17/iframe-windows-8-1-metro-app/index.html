@@ -73,23 +73,23 @@
 
 <p>I’m a web developer currently working for a startup called <a href="http://www.showcaseworkshop.com">Showcase Workshop</a>. While I was programming for our Windows 8 app I faced a problem when I needed to integrate HTML page in an iframe.</p>
 
-<p>Basically, I had a HTML page coming for my local cache (<code>ms-appdata</code>) and I could not load it in an <code>iframe</code> using something like this:</p>
+<p>Basically, I had a HTML page coming for my local cache (<code class="highlighter-rouge">ms-appdata</code>) and I could not load it in an <code class="highlighter-rouge">iframe</code> using something like this:</p>
 
-<p><code>&lt;iframe src=”ms-appdata:///local/index.html”&gt;&lt;/iframe&gt;</code></p>
+<p><code class="highlighter-rouge">&lt;iframe src=”ms-appdata:///local/index.html”&gt;&lt;/iframe&gt;</code></p>
 
 <p>I was getting a blank iframe. Then I tried with a web context iframe:</p>
 
-<p><code>&lt;iframe src=”ms-appx-web:///local/index.html”&gt;&lt;/iframe&gt;</code></p>
+<p><code class="highlighter-rouge">&lt;iframe src=”ms-appx-web:///local/index.html”&gt;&lt;/iframe&gt;</code></p>
 
-<p>Unfortunately, <code>ms-appx-web</code> can’t access to a local resource but only to resources in the app package. So I was getting a black iframe…</p>
+<p>Unfortunately, <code class="highlighter-rouge">ms-appx-web</code> can’t access to a local resource but only to resources in the app package. So I was getting a black iframe…</p>
 
 <p>After a bit of googling I found this page: <a href="http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx">http://blogs.windows.com/windows/b/appbuilder/archive/2013/07/17/what-s-new-in-webview-in-windows-8-1.aspx</a></p>
 
 <p>Finally, I made it work with:</p>
 
-<p><code>&lt;x-ms-webview src=”ms-appdata:///local/index.html”&gt;&lt;/x-ms-webview&gt;</code></p>
+<p><code class="highlighter-rouge">&lt;x-ms-webview src=”ms-appdata:///local/index.html”&gt;&lt;/x-ms-webview&gt;</code></p>
 
-<p>You can find <code>x-ms-webview</code> documentation here: <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx">http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx</a></p>
+<p>You can find <code class="highlighter-rouge">x-ms-webview</code> documentation here: <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx">http://msdn.microsoft.com/en-us/library/windows/apps/dn301831.aspx</a></p>
 
 <p>N.B.: You might want to add this tag directly with jQuery but then you will get the famous security exception:</p>
 
@@ -111,7 +111,7 @@ see
 <a href="http://go.microsoft.com/fwlink/?LinkID=247104">http://go.microsoft.com/fwlink/?LinkID=247104</a>.</p>
 </blockquote>
 
-<p>I recommend to put <code>x-ms-webview</code> in hard in your HTML code with <code>display:none;</code> and then dynamically set the right <code>src</code> and display it when needed.</p>
+<p>I recommend to put <code class="highlighter-rouge">x-ms-webview</code> in hard in your HTML code with <code class="highlighter-rouge">display:none;</code> and then dynamically set the right <code class="highlighter-rouge">src</code> and display it when needed.</p>
 
 
 </article>

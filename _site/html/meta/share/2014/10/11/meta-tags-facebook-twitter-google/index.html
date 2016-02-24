@@ -71,72 +71,72 @@
 <article class="post-content">
   <p>A really quick post about meta tags and a nice way to make your page sharing more accurate/attractive on Facebook, Twitter, Google+ and all the main other social networks.</p>
 
-<p>I think the first one to start with specific header meta tags was Facebook. With their own “bot” called OpenGraph, they scan websites and target first specific meta tags in your <code>head</code> tag. If you don’t have these tags, they might fall back to your default ones but I saw many times this system failing and/or putting something broken/not relevant in place of your actual page title or description. So it’s probably better to just add them to your page just to be sure your saving is safe.</p>
+<p>I think the first one to start with specific header meta tags was Facebook. With their own “bot” called OpenGraph, they scan websites and target first specific meta tags in your <code class="highlighter-rouge">head</code> tag. If you don’t have these tags, they might fall back to your default ones but I saw many times this system failing and/or putting something broken/not relevant in place of your actual page title or description. So it’s probably better to just add them to your page just to be sure your saving is safe.</p>
 
 <h3 id="facebook">Facebook</h3>
 <p>Let’s have a look to Facebook specific meta tags.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Title Here&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content=</span><span class="s">&quot;article&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content=</span><span class="s">&quot;http://www.example.com/&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content=</span><span class="s">&quot;http://example.com/image.jpg&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Description Here&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:site_name&quot;</span> <span class="na">content=</span><span class="s">&quot;Site Name, i.e. Moz&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;article:published_time&quot;</span> <span class="na">content=</span><span class="s">&quot;2013-09-17T05:59:00+01:00&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;article:modified_time&quot;</span> <span class="na">content=</span><span class="s">&quot;2013-09-16T19:08:47+01:00&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;article:section&quot;</span> <span class="na">content=</span><span class="s">&quot;Article Section&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span> <span class="na">content=</span><span class="s">&quot;Article Tag&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;fb:admins&quot;</span> <span class="na">content=</span><span class="s">&quot;Facebook numberic ID&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"Title Here"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"article"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"http://www.example.com/"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image"</span> <span class="na">content=</span><span class="s">"http://example.com/image.jpg"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"Description Here"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:site_name"</span> <span class="na">content=</span><span class="s">"Site Name, i.e. Moz"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:published_time"</span> <span class="na">content=</span><span class="s">"2013-09-17T05:59:00+01:00"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:modified_time"</span> <span class="na">content=</span><span class="s">"2013-09-16T19:08:47+01:00"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:section"</span> <span class="na">content=</span><span class="s">"Article Section"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:tag"</span> <span class="na">content=</span><span class="s">"Article Tag"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"fb:admins"</span> <span class="na">content=</span><span class="s">"Facebook numberic ID"</span> <span class="nt">/&gt;</span> </code></pre></figure>
 
 <p>I think everything is pretty clear and well named.
 I’ve applied this example for this blog (as you can see in the source):</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content=</span><span class="s">&quot;VatWeb &lt;CODE&gt; Blog&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content=</span><span class="s">&quot;blog&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content=</span><span class="s">&quot;http://vincentaudebert.github.io/&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content=</span><span class="s">&quot;/ico/apple-touch-icon-144-precomposed.png&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content=</span><span class="s">&quot;You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"VatWeb &lt;CODE&gt; Blog"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"blog"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"http://vincentaudebert.github.io/"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image"</span> <span class="na">content=</span><span class="s">"/ico/apple-touch-icon-144-precomposed.png"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new"</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <p>You will see it if you share my page on Facebook. I found much more fun to put a specific Facebook related message as a description instead of just my page description.</p>
 
 <h3 id="twitter">Twitter</h3>
 <p>And now Twitter specific meta tags, called “Twitter card”.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary_large_image&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@publisher_handle&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Page Title&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Page description less than 200 characters&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@author_handle&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:card"</span> <span class="na">content=</span><span class="s">"summary_large_image"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:site"</span> <span class="na">content=</span><span class="s">"@publisher_handle"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:title"</span> <span class="na">content=</span><span class="s">"Page Title"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:description"</span> <span class="na">content=</span><span class="s">"Page description less than 200 characters"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:creator"</span> <span class="na">content=</span><span class="s">"@author_handle"</span><span class="nt">&gt;</span>
 <span class="c">&lt;!-- Twitter summary card with large image must be at least 280x150px --&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;http://www.example.com/image.html&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:image:src"</span> <span class="na">content=</span><span class="s">"http://www.example.com/image.html"</span><span class="nt">&gt;</span> </code></pre></figure>
 
 <p>I’ve applied this example for this blog (as you can see in the source):</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;http://vincentaudebert.github.io/&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;VatWeb &lt;CODE&gt; Blog&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;You can retweet Justin Bieber... or you can check out VatWeb coding blog and learn something new&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image&quot;</span> <span class="na">content=</span><span class="s">&quot;/ico/apple-touch-icon-144-precomposed.png&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@vatweb&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:card"</span> <span class="na">content=</span><span class="s">"summary"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:url"</span> <span class="na">content=</span><span class="s">"http://vincentaudebert.github.io/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:title"</span> <span class="na">content=</span><span class="s">"VatWeb &lt;CODE&gt; Blog"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:description"</span> <span class="na">content=</span><span class="s">"You can retweet Justin Bieber... or you can check out VatWeb coding blog and learn something new"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:image"</span> <span class="na">content=</span><span class="s">"/ico/apple-touch-icon-144-precomposed.png"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:creator"</span> <span class="na">content=</span><span class="s">"@vatweb"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <p>Same than for Facebook, I chose to put a Twitter related message as a description.</p>
 
 <h3 id="google">Google+</h3>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Google Authorship and Publisher Markup --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;author&quot;</span> <span class="na">href=</span><span class="s">&quot;https://plus.google.com/[Google+_Profile]/posts&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;publisher&quot;</span> <span class="na">href=</span><span class="s">”https://plus.google.com/[Google+_Page_Profile]&quot;/</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"> <span class="c">&lt;!-- Google Authorship and Publisher Markup --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"author"</span> <span class="na">href=</span><span class="s">"https://plus.google.com/[Google+_Profile]/posts"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"publisher"</span> <span class="na">href=</span><span class="s">”https://plus.google.com/[Google+_Page_Profile]"/</span><span class="nt">&gt;</span>
 
 <span class="c">&lt;!-- Schema.org markup for Google+ --&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span> <span class="na">content=</span><span class="s">&quot;The Name or Title Here&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;This is the page description&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">&quot;image&quot;</span> <span class="na">content=</span><span class="s">&quot;http://www.example.com/image.jpg&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"name"</span> <span class="na">content=</span><span class="s">"The Name or Title Here"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"This is the page description"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"image"</span> <span class="na">content=</span><span class="s">"http://www.example.com/image.jpg"</span><span class="nt">&gt;</span> </code></pre></figure>
 
 <p>For Google+, I chose to reuse my Facebook description, and I don’t have a Google+ profile, so I don’t specify any profile which gives:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span> <span class="na">content=</span><span class="s">&quot;VatWeb &lt;CODE&gt; Blog&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">&quot;image&quot;</span> <span class="na">content=</span><span class="s">&quot;/ico/apple-touch-icon-144-precomposed.png&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"name"</span> <span class="na">content=</span><span class="s">"VatWeb &lt;CODE&gt; Blog"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"You can keep liking lolcat pictures... or you can check out VatWeb coding blog and learn something new"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"image"</span> <span class="na">content=</span><span class="s">"/ico/apple-touch-icon-144-precomposed.png"</span><span class="nt">&gt;</span> </code></pre></figure>
 
 <h3 id="linkedin">LinkedIn</h3>
 
