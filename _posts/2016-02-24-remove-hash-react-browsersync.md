@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Remove hash in a React App served by BrowserSync
-date:       2016-02-24 15:31:19
+date:       2016-02-23 15:31:19
 summary:    A couple of special tricks
 categories: javascript react
 ---
