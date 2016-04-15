@@ -1,16 +1,16 @@
 ---
 layout: post
 title: GitHub label management to use with Huboard
-date:       2016-04-15 15:31:19
+date:       2016-04-14 10:31:19
 summary:    Copy/create labels into a new repository
 categories: project management
 ---
 
 Recently at [Springload] [1], we are exploring the idea of using [Huboard] [2] to have a better view on our workload on a project and use the full potential of [GitHub] [3].
 
-Most of it comes from a good utilisation of the labels.
+Most of it, I believe, comes from a good utilisation of the labels.
 
-On this page, I will take you through the process I used to copy/create new labels in order to have a nice structure ready for Huboard.
+On this page, I will take you through the process I used to copy/create new labels in order to have a nice structure ready for [Huboard][2].
 
 ### The main tool
 
@@ -63,7 +63,8 @@ To do so, run this command `github-label-sync --access-token xxxxxx myname/myrep
 If you want to see what will happen before actually executing it, you can run a dry run with `github-label-sync --access-token xxxxxx --dry-run myname/myrepo`
 
 You should get something like this:
-```
+
+{% highlight shell %}
 Syncing labels for "springload/springtunes"
 Fetching labels from GitHub
  > Missing: the "★★★" label is missing from the repo. It will be created.
@@ -97,7 +98,7 @@ Fetching labels from GitHub
  > Added: the "wontfix" label in the repo is not expected. It will be deleted.
 Applying label changes, please wait…
 Labels updated
-```
+{% endhighlight %}
 
 If you want more options check the [documentation for github-label-sync] [8].
 

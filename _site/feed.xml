@@ -7,6 +7,114 @@
     <atom:link href="http://vincentaudebert.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>GitHub label management to use with Huboard</title>
+        <description>&lt;p&gt;Recently at &lt;a href=&quot;https://www.springload.co.nz&quot;&gt;Springload&lt;/a&gt;, we are exploring the idea of using &lt;a href=&quot;https://www.huboard.com&quot;&gt;Huboard&lt;/a&gt; to have a better view on our workload on a project and use the full potential of &lt;a href=&quot;https://www.github.com&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Most of it, I believe, comes from a good utilisation of the labels.&lt;/p&gt;
+
+&lt;p&gt;On this page, I will take you through the process I used to copy/create new labels in order to have a nice structure ready for &lt;a href=&quot;https://www.huboard.com&quot;&gt;Huboard&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-main-tool&quot;&gt;The main tool&lt;/h3&gt;
+
+&lt;p&gt;We are going to use &lt;code class=&quot;highlighter-rouge&quot;&gt;github-label-sync&lt;/code&gt; which is a really cool NPM package &lt;a href=&quot;https://www.npmjs.com/package/github-label-sync&quot;&gt;available here&lt;/a&gt; or even simpler, using &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g github-label-sync&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-process&quot;&gt;The process&lt;/h3&gt;
+
+&lt;h4 id=&quot;get-the-config&quot;&gt;Get the config&lt;/h4&gt;
+
+&lt;p&gt;In my case, I used an existing repository where I had some cool labels I wanted to reuse but I also needed to add new ones.&lt;/p&gt;
+
+&lt;p&gt;I recommend using the GitHub interface to create your extra labels and then run &lt;a href=&quot;https://gist.github.com/MoOx/93c2853fee760f42d97f&quot;&gt;this script&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// go on you labels pages&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// eg https://github.com/cssnext/cssnext/labels&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// paste this script in your console&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// copy the output and now you can import it using https://github.com/popomore/github-labels !&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.label-link&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;textContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// using style.backgroundColor might returns &quot;rgb(...)&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;style&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;background-color:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/color:.*/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// github wants hex code only without # or ;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/^#/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You will get a JSON blob looking like something like this: &lt;a href=&quot;https://github.com/springload/labels/blob/master/labels.json&quot;&gt;https://github.com/springload/labels/blob/master/labels.json&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Feel free to reuse directly Springload’s blob. We try to keep it as standard as possible :)&lt;/p&gt;
+
+&lt;p&gt;You can also write your own config from scratch if you feel like it. Just make sure to respect &lt;a href=&quot;https://github.com/Financial-Times/github-label-sync/blob/master/labels.json&quot;&gt;this pattern&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;use-the-config&quot;&gt;Use the config&lt;/h4&gt;
+
+&lt;p&gt;Once you have your config saved at the root of your project as &lt;code class=&quot;highlighter-rouge&quot;&gt;labels.json&lt;/code&gt; and you have run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g github-label-sync&lt;/code&gt;, it’s time to import the labels inside your repository.&lt;/p&gt;
+
+&lt;p&gt;To do so, run this command &lt;code class=&quot;highlighter-rouge&quot;&gt;github-label-sync --access-token xxxxxx myname/myrepo&lt;/code&gt;.
+If you want to see what will happen before actually executing it, you can run a dry run with &lt;code class=&quot;highlighter-rouge&quot;&gt;github-label-sync --access-token xxxxxx --dry-run myname/myrepo&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You should get something like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;Syncing labels &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;springload/springtunes&quot;&lt;/span&gt;
+Fetching labels from GitHub
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;★★★&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;★★☆&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;★☆☆&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;0 - Backlog&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;1 - Ready&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;2 - Working&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;3 - To be tested&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;4 - Testing&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;5 - Tested&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;6 - Live&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;BED&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Big&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Changed: the &lt;span class=&quot;s2&quot;&gt;&quot;bug&quot;&lt;/span&gt; label &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the repo is out of date. It will be updated to &lt;span class=&quot;s2&quot;&gt;&quot;Bug&quot;&lt;/span&gt; with color &lt;span class=&quot;s2&quot;&gt;&quot;#fc2929&quot;&lt;/span&gt;.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Content Update&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Design&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Changed: the &lt;span class=&quot;s2&quot;&gt;&quot;duplicate&quot;&lt;/span&gt; label &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the repo is out of date. It will be updated to &lt;span class=&quot;s2&quot;&gt;&quot;Duplicate&quot;&lt;/span&gt; with color &lt;span class=&quot;s2&quot;&gt;&quot;#cccccc&quot;&lt;/span&gt;.
+ &amp;gt; Changed: the &lt;span class=&quot;s2&quot;&gt;&quot;enhancement&quot;&lt;/span&gt; label &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the repo is out of date. It will be updated to &lt;span class=&quot;s2&quot;&gt;&quot;Enhancement&quot;&lt;/span&gt; with color &lt;span class=&quot;s2&quot;&gt;&quot;#84b6eb&quot;&lt;/span&gt;.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;FED&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Future&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Changed: the &lt;span class=&quot;s2&quot;&gt;&quot;help wanted&quot;&lt;/span&gt; label &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the repo is out of date. It will be updated to &lt;span class=&quot;s2&quot;&gt;&quot;Help wanted&quot;&lt;/span&gt; with color &lt;span class=&quot;s2&quot;&gt;&quot;#cc317c&quot;&lt;/span&gt;.
+ &amp;gt; Changed: the &lt;span class=&quot;s2&quot;&gt;&quot;invalid&quot;&lt;/span&gt; label &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the repo is out of date. It will be updated to &lt;span class=&quot;s2&quot;&gt;&quot;Invalid&quot;&lt;/span&gt; with color &lt;span class=&quot;s2&quot;&gt;&quot;#e6e6e6&quot;&lt;/span&gt;.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Medium&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Feature name 1&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Changed: the &lt;span class=&quot;s2&quot;&gt;&quot;question&quot;&lt;/span&gt; label &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the repo is out of date. It will be updated to &lt;span class=&quot;s2&quot;&gt;&quot;Question&quot;&lt;/span&gt; with color &lt;span class=&quot;s2&quot;&gt;&quot;#cc317c&quot;&lt;/span&gt;.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Small&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Tested &amp;amp; Failed&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Tested &amp;amp; Passed&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Missing: the &lt;span class=&quot;s2&quot;&gt;&quot;Won&#39;t fix&quot;&lt;/span&gt; label is missing from the repo. It will be created.
+ &amp;gt; Added: the &lt;span class=&quot;s2&quot;&gt;&quot;wontfix&quot;&lt;/span&gt; label &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the repo is not expected. It will be deleted.
+Applying label changes, please &lt;span class=&quot;nb&quot;&gt;wait&lt;/span&gt;…
+Labels updated&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you want more options check the &lt;a href=&quot;https://github.com/Financial-Times/github-label-sync#command-line-interface&quot;&gt;documentation for github-label-sync&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;huboard&quot;&gt;Huboard&lt;/h3&gt;
+
+&lt;p&gt;Now it’s time for you to create some issues, label them nicely and strictly and then open &lt;a href=&quot;https://www.huboard.com&quot;&gt;Huboard&lt;/a&gt;.
+You will see something looking like &lt;a href=&quot;https://huboard.com/huboard/huboard&quot;&gt;this&lt;/a&gt;.
+With your issues, your colors and your own project stages, etc. ;)&lt;/p&gt;
+
+&lt;p&gt;HAPPY PROJECT MANAGEMENT!&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 14 Apr 2016 22:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/project/management/2016/04/14/github-labels-huboard/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/project/management/2016/04/14/github-labels-huboard/</guid>
+      </item>
+    
+      <item>
         <title>Remove hash in a React App served by BrowserSync</title>
         <description>&lt;p&gt;You probably noticed that by default react app navigation is using the famous &lt;code class=&quot;highlighter-rouge&quot;&gt;/#/&lt;/code&gt; in the url.&lt;/p&gt;
 
@@ -354,32 +462,6 @@ You need to add the generated CSS to your CSS file and then apply &lt;code class
         <pubDate>Wed, 29 Jul 2015 03:31:19 +1200</pubDate>
         <link>http://vincentaudebert.github.io/css/color/generator/2015/07/29/twitter-bootstrap-change-color-navbar/</link>
         <guid isPermaLink="true">http://vincentaudebert.github.io/css/color/generator/2015/07/29/twitter-bootstrap-change-color-navbar/</guid>
-      </item>
-    
-      <item>
-        <title>Google Picker dialog behind bootstrap modal</title>
-        <description>&lt;p&gt;Another article talking about Google API and it’s awesome Google Picker which allows you to pick files from your Google Drive.&lt;/p&gt;
-
-&lt;p&gt;I tried to display it on top of a modal on my screen and I could not see the Google Picker dialog showing up.
-It was simply hidden behind the modal.&lt;/p&gt;
-
-&lt;p&gt;And here comes &lt;code class=&quot;highlighter-rouge&quot;&gt;z-index&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Using jQuery, the best solution is to change on the fly &lt;code class=&quot;highlighter-rouge&quot;&gt;z-index&lt;/code&gt; property for class &lt;code class=&quot;highlighter-rouge&quot;&gt;.picker-dialog&lt;/code&gt;.
-Use a &lt;code class=&quot;highlighter-rouge&quot;&gt;z-index&lt;/code&gt; &amp;gt; 1050 or the value of your modal one.&lt;/p&gt;
-
-&lt;p&gt;Here is the code I use.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;.picker-dialog&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;z-index&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Hope this helps!&lt;/p&gt;
-
-&lt;p&gt;Article inspired by &lt;a href=&quot;https://github.com/softmonkeyjapan/angular-google-picker/issues/4&quot;&gt;this github issue&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 27 Jun 2015 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/google/picker/dialog/css/2015/06/27/google-picker-dialog-z-index/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/google/picker/dialog/css/2015/06/27/google-picker-dialog-z-index/</guid>
       </item>
     
   </channel>
