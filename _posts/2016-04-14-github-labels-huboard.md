@@ -110,7 +110,7 @@ With your issues, your colors and your own project stages, etc. ;)
 
 HAPPY PROJECT MANAGEMENT!
 
-  [1]: https://www.springload.co.nz
+  [1]: http://www.springload.co.nz
   [2]: https://www.huboard.com
   [3]: https://www.github.com
   [4]: https://www.npmjs.com/package/github-label-sync
