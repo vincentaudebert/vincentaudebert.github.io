@@ -4,6 +4,7 @@ title: Control your Spotify client with your browser
 date:       2016-02-01 15:31:19
 summary:    When playing with Redux leads to a cool little npm package
 categories: javascript react
+redirect_from: "/javascript/react/2016/02/01/spotify-springtunes-redux-copy/"
 ---
 
 The beginning of the year is generally light here in New Zealand. You know... the time everybody gets back to work :)

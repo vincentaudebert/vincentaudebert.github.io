@@ -7,8 +7,74 @@
     <atom:link href="http://vincentaudebert.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>How to import / export in React/ES6?</title>
+        <description>&lt;p&gt;Quick note that might help some of you.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-import--export-classes-especially-components-in-reactes6&quot;&gt;How to import / export classes (especially components) in React/ES6?&lt;/h2&gt;
+
+&lt;h3 id=&quot;the-errors&quot;&gt;The errors&lt;/h3&gt;
+
+&lt;p&gt;If you get distracted you might end up exporting or importing your classes the wrong way.
+And getting one of these errors:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+Uncaught Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. Check the render method of `YourClass`.
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+Uncaught TypeError: Super expression must either be null or a function, not undefined
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;one-possibility-default&quot;&gt;One possibility: default&lt;/h3&gt;
+
+&lt;p&gt;If you have a closer look at your class &lt;code class=&quot;highlighter-rouge&quot;&gt;YourClass&lt;/code&gt;, you probably defined it like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YourClass&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And then tried to import it in another file like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YourClass&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;./YourModule&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For this particular case, &lt;code class=&quot;highlighter-rouge&quot;&gt;YourClass&lt;/code&gt; should be declared as &lt;code class=&quot;highlighter-rouge&quot;&gt;default&lt;/code&gt;, like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YourClass&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And then your import will work.&lt;/p&gt;
+
+&lt;h3 id=&quot;other-possibility-no-default&quot;&gt;Other possibility: no default&lt;/h3&gt;
+
+&lt;p&gt;Now let’s say your module &lt;code class=&quot;highlighter-rouge&quot;&gt;YourModule.js&lt;/code&gt; contains more than one class/var and you don’t really want to default any of them.&lt;/p&gt;
+
+&lt;p&gt;You will keep declaring &lt;code class=&quot;highlighter-rouge&quot;&gt;YourClass&lt;/code&gt; like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YourClass&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And change your import to use curly braces, like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YourClass&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;./YourModule&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;more-examples&quot;&gt;More examples&lt;/h3&gt;
+
+&lt;p&gt;You will find more examples at these addresses:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 15 May 2016 22:31:19 +1200</pubDate>
+        <link>http://vincentaudebert.github.io/javascript/react/es6/2016/05/15/import-export-react-es6/</link>
+        <guid isPermaLink="true">http://vincentaudebert.github.io/javascript/react/es6/2016/05/15/import-export-react-es6/</guid>
+      </item>
+    
+      <item>
         <title>GitHub label management to use with Huboard</title>
-        <description>&lt;p&gt;Recently at &lt;a href=&quot;https://www.springload.co.nz&quot;&gt;Springload&lt;/a&gt;, we are exploring the idea of using &lt;a href=&quot;https://www.huboard.com&quot;&gt;Huboard&lt;/a&gt; to have a better view on our workload on a project and use the full potential of &lt;a href=&quot;https://www.github.com&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Recently at &lt;a href=&quot;http://www.springload.co.nz&quot;&gt;Springload&lt;/a&gt;, we are exploring the idea of using &lt;a href=&quot;https://www.huboard.com&quot;&gt;Huboard&lt;/a&gt; to have a better view on our workload on a project and use the full potential of &lt;a href=&quot;https://www.github.com&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Most of it, I believe, comes from a good utilisation of the labels.&lt;/p&gt;
 
@@ -443,25 +509,6 @@ Here comes &lt;a href=&quot;https://github.com/vincentaudebert/polymer-oneall-so
         <pubDate>Sat, 08 Aug 2015 03:31:19 +1200</pubDate>
         <link>http://vincentaudebert.github.io/polymer/element/2015/08/08/polymer-element-oneall/</link>
         <guid isPermaLink="true">http://vincentaudebert.github.io/polymer/element/2015/08/08/polymer-element-oneall/</guid>
-      </item>
-    
-      <item>
-        <title>Twitter Bootstrap 3 - Change your navbar colors</title>
-        <description>&lt;p&gt;Really quick article about a cool tool.&lt;/p&gt;
-
-&lt;p&gt;Few weeks ago I had to change my navbar colors and could not be bothered going through all the CSS files to modify all the colors etc…&lt;/p&gt;
-
-&lt;p&gt;I found &lt;a href=&quot;http://twitterbootstrap3navbars.w3masters.nl/?color=%234066b9&amp;amp;linkcolor=%23fff&amp;amp;activelinkcolor=%23f6f6f6&amp;amp;gradient=0&amp;amp;gradient=1&amp;amp;borders=0&quot;&gt;this awesome and really simple website&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Just select your colors and then it will generate all the CSS classes you need to implement to modify your colors.
-You need to add the generated CSS to your CSS file and then apply &lt;code class=&quot;highlighter-rouge&quot;&gt;navbar-custom&lt;/code&gt; class to your navbar and colors will change as you set it up!&lt;/p&gt;
-
-&lt;p&gt;Hope this helps!&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 29 Jul 2015 03:31:19 +1200</pubDate>
-        <link>http://vincentaudebert.github.io/css/color/generator/2015/07/29/twitter-bootstrap-change-color-navbar/</link>
-        <guid isPermaLink="true">http://vincentaudebert.github.io/css/color/generator/2015/07/29/twitter-bootstrap-change-color-navbar/</guid>
       </item>
     
   </channel>
