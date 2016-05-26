@@ -296,18 +296,6 @@ h6 {
 }
 
 @media screen and (min-width: 64em) {
-  .h1,
-  h1 {
-    font-size: 4.5rem;
-    line-height: 6rem;
-  }
-
-  .h2,
-  h2 {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
-
   .posts .post-meta {
     padding-bottom: .25rem;
   }
