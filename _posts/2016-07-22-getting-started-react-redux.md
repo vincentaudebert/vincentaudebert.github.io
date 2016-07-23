@@ -20,6 +20,9 @@ I have been collecting some really useful articles about Redux and I will just s
 
 - A masterpiece by egghead.io: [https://egghead.io/courses/building-react-applications-with-idiomatic-redux] [3]
 
+- A fairly complete article about what tools do you need, how your app should be organised, etc. 
+[https://medium.com/@tkssharma/react-redux-best-practices-write-production-apps-7c3639e3c447] [10]
+
 ## Once you nailed it
 
 - 3 simple steps to improve your React Redux code: [https://www.ckl.io/blog/3-simple-steps-to-improve-react-redux-code/] [4]
@@ -56,3 +59,4 @@ Have A LOT of fun with Redux!
   [7]: https://twitter.com/JavaScriptDaily
   [8]: https://twitter.com/vatweb
   [9]: http://vincentaudebert.github.io/contact/
+  [10]: https://medium.com/@tkssharma/react-redux-best-practices-write-production-apps-7c3639e3c447
