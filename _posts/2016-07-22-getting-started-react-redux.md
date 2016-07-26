@@ -14,6 +14,10 @@ I have been collecting some really useful articles about Redux and I will just s
 
 (N.B.: I will try to keep this page updated as much as possible :))
 
+## Are you ready?
+
+Are you totally confident in your React skills? Don't skip steps, it could make your redux experience really frustrating. [https://medium.com/react-ecosystem/how-to-handle-state-in-react-6f2d3cd73a0c] [15]
+
 ## Some beginner reading
 
 - Of course, you probably had a look at the official documentation: [http://redux.js.org/docs/introduction/index.html] [13]
@@ -74,3 +78,4 @@ Have A LOT of fun with Redux!
   [12]: https://github.com/markerikson/redux/blob/structuring-reducers-page/docs/recipes/StructuringReducers.md
   [13]: http://redux.js.org/docs/introduction/index.html
   [14]: https://medium.com/@albburtsev/how-to-migrate-to-redux-in-big-web-applications-and-survive-part-1-2ced39accff
+  [15]: https://medium.com/react-ecosystem/how-to-handle-state-in-react-6f2d3cd73a0c
