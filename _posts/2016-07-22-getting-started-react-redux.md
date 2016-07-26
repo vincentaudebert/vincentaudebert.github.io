@@ -16,6 +16,8 @@ I have been collecting some really useful articles about Redux and I will just s
 
 ## Some beginner reading
 
+- Of course, you probably had a look at the official documentation: [http://redux.js.org/docs/introduction/index.html] [13]
+
 - Get to know the pros and cons of working with Redux in your ReactJS app: [https://www.madetech.com/blog/the-pros-and-cons-of-react-plus-redux] [1]
 
 - A global full stack tutorial about Redux. Very well explained and complete. [http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html] [2]
@@ -24,6 +26,8 @@ I have been collecting some really useful articles about Redux and I will just s
 
 - A fairly complete article about what tools do you need, how your app should be organised, etc. 
 [https://medium.com/@tkssharma/react-redux-best-practices-write-production-apps-7c3639e3c447] [10]
+
+- Are you migrating from Flux or similar to Redux? This really good article might help you: [https://medium.com/@albburtsev/how-to-migrate-to-redux-in-big-web-applications-and-survive-part-1-2ced39accff] [14]
 
 ## Get some exercise
 
@@ -68,3 +72,5 @@ Have A LOT of fun with Redux!
   [10]: https://medium.com/@tkssharma/react-redux-best-practices-write-production-apps-7c3639e3c447
   [11]: https://twitter.com/dan_abramov
   [12]: https://github.com/markerikson/redux/blob/structuring-reducers-page/docs/recipes/StructuringReducers.md
+  [13]: http://redux.js.org/docs/introduction/index.html
+  [14]: https://medium.com/@albburtsev/how-to-migrate-to-redux-in-big-web-applications-and-survive-part-1-2ced39accff
