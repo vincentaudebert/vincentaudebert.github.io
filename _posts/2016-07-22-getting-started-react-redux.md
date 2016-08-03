@@ -33,6 +33,8 @@ Are you totally confident in your React skills? Don't skip steps, it could make 
 
 - Are you migrating from Flux or similar to Redux? This really good article might help you: [https://medium.com/@albburtsev/how-to-migrate-to-redux-in-big-web-applications-and-survive-part-1-2ced39accff] [14]
 
+- An excellent resource to learn from @luqmonster mistakes: [https://medium.com/horrible-hacks/things-i-wish-i-knew-about-redux-9924abf2f9e0#.zci2snyyv] [16]
+
 ## Get some exercise
 
 - I created this small repo on Github to give a quick intro and easy walk through a React/Redux app. First exercise is complete, then you have to fill the gaps :) [https://github.com/springload/react-redux-exercise] [6]
@@ -79,3 +81,4 @@ Have A LOT of fun with Redux!
   [13]: http://redux.js.org/docs/introduction/index.html
   [14]: https://medium.com/@albburtsev/how-to-migrate-to-redux-in-big-web-applications-and-survive-part-1-2ced39accff
   [15]: https://medium.com/react-ecosystem/how-to-handle-state-in-react-6f2d3cd73a0c
+  [16]: https://medium.com/horrible-hacks/things-i-wish-i-knew-about-redux-9924abf2f9e0
