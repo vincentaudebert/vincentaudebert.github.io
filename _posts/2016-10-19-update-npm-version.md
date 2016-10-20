@@ -26,7 +26,8 @@ Let's have a quick look at updating a NPM package version in a clean and easy wa
 
 - Once you are sure everything is fine, `npm version patch` (will bump third number, i.e. 0.1.5 -> 0.1.6) or any other more appropriate argument (see [https://docs.npmjs.com/cli/version] [2])
 
-- Run `git push origin master --tags`. `npm version` also creates a tag. So we need to push the tags in order to have the version available in Github too.
+- Run `git push origin master --tags`. 
+`npm version` also creates a tag. So we need to push the tags in order to have the version available in Github too.
 
 - Run `npm publish`
 
