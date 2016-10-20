@@ -22,7 +22,7 @@ Let's have a quick look at updating a NPM package version in a clean and easy wa
 
 - Open your terminal and go to your package root folder.
 
-- Make your changes on code base and commit your changes.
+- Make your changes on code base.
 
 - Once you are sure everything is fine, `npm version patch` (will bump third number, i.e. 0.1.5 -> 0.1.6) or any other more appropriate argument (see [https://docs.npmjs.com/cli/version] [2])
 
