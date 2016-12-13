@@ -14,7 +14,7 @@ What a wonderful tool! Especially to test React components! As easy as [.toMatch
 
 Although, I faced an annoying problem recently.
 
-## Jest coverage fails
+## `jest` passes but `jest --coverage` fails
 
 You run your tests with `jest`. Snapshots are generated properly and tests are passing like you expect them to do.
 
