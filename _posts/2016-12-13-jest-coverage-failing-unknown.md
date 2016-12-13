@@ -8,7 +8,7 @@ categories: javascript jest
 
 Probably my last quick post of the year 2016! Yay for 2017!
 
-Recently I really got into unit testings and [Jest] [4].
+Recently I really got into unit testing and [Jest] [4].
 
 What a wonderful tool! Especially to test React components! As easy as [.toMatchSnapshot()] [1]! Those who did some component testing using Mocha+Chai know what I'm talking about.
 
