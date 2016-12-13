@@ -76,7 +76,7 @@ Originally found the solution on these posts: [https://github.com/facebook/jest/
 
   [1]: http://facebook.github.io/jest/docs/api.html#tomatchsnapshot
   [2]: https://github.com/springload/mocha-chai-to-jest
-  [3]: https://github.com/springload/mocha-chai-to-jest/blob/master/things-to-test/StatelessAnimal.js#L16
+  [3]: https://github.com/springload/mocha-chai-to-jest/blob/ddc555ab6d28da3498174d2622bf73b854db6c13/things-to-test/StatelessAnimal.js#L16
   [4]: http://facebook.github.io/jest/
   [5]: https://github.com/facebook/jest/issues/1740
   [6]: https://github.com/facebook/jest/issues/1824#issuecomment-250376673
