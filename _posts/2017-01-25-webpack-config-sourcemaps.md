@@ -8,7 +8,7 @@ categories: javascript webpack config
 
 First post of 2017! Happy new year everyone!
 
-Let's talk about [Webpack] [1] (still the version 1... ;)).
+Let's talk about [Webpack] [1] (still the version 1.14... ;)).
 
 Yeah I know. That sounds scary. Especially when you dive into the config hell it can be.
 
