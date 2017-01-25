@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sourcemaps configuration with Webpack
+title: SourceMaps configuration with Webpack
 date:       2017-01-25 10:31:19
 summary:    Let's optimise your development config a bit...
 categories: javascript webpack config
