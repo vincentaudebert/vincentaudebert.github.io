@@ -2,7 +2,7 @@
 layout: post
 title: Sourcemaps configuration with Webpack
 date:       2017-01-25 10:31:19
-summary:    Let's optimise this a bit...
+summary:    Let's optimise your development config a bit...
 categories: javascript webpack config
 ---
 
@@ -55,6 +55,9 @@ You also need to delete/comment the `config.devtool = ` line if you have any.
 
 Your faulty file and line should show up again in your browser and the build should still be pretty fast.
 
+For more information about the different devtools, [check the documentation here] [4]
+
   [1]: https://webpack.github.io/
   [2]: https://github.com/webpack/webpack/issues/2145
   [3]: https://github.com/webpack/webpack/issues/2145#issuecomment-251691937
+  [4]: https://webpack.github.io/docs/configuration.html#devtool
