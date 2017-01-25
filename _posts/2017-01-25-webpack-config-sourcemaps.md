@@ -49,7 +49,7 @@ config.plugins.push(new webpack.SourceMapDevToolPlugin({
 }));
 ```
 
-The `columns: false` is important and will make the build as fast as `cheap-module-eval-source-map`.
+The `columns: false` is important and will make the build as fast as `cheap-module-eval-source-map`. Tradeoff is that you won't have the columns for your debugging. It's fine with my needs especially when the build is twice faster :)
 
 You also need to delete/comment the `config.devtool = ` line if you have any.
 
