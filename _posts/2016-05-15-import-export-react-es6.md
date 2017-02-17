@@ -63,7 +63,7 @@ And change your import to use curly braces, like this:
 import { YourComponent } from './YourComponent'
 {% endhighlight %}
 
-**N.B.: The Airbnb styleguide disallows having multiple class components in the same file. But you can use [stateless components] [3]. **
+**N.B.: The Airbnb styleguide disallows having multiple class components in the same file. But you can use [stateless components] [3].**
 
 ### More examples
 
